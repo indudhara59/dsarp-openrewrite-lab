@@ -1,12 +1,12 @@
 # dsarp-openrewrite-lab
 
-`dsarp-openrewrite-lab` is the scaffold for an academic software architecture refactoring experiment. The completed experiment is intended to trace a reproducible path from intentionally introduced architectural smells through automated refactoring and comparative evaluation. This initial phase contains only repository structure, documentation, conventions, and validation entry points; it does not yet contain the benchmark Java application, analyzers, recipes, or dashboard implementation.
+`dsarp-openrewrite-lab` is an academic software architecture refactoring experiment. It is intended to trace a reproducible path from intentionally introduced architectural smells through automated refactoring and comparative evaluation. The Java benchmark is implemented; analyzers, recommendation logic, OpenRewrite recipes, and the dashboard remain future phases.
 
 ## Planned workflow
 
 The experiment is expected to proceed through these stages:
 
-1. Build a Java benchmark with documented, intentionally introduced architectural smells.
+1. Build a Java benchmark with documented, intentionally introduced architectural smells. *(Current phase complete.)*
 2. Analyze the benchmark without consulting its architecture ground truth.
 3. Detect God Component and Unstable Dependency candidates using fixed, documented thresholds.
 4. Produce deterministic, ranked refactoring recommendations.
@@ -33,17 +33,17 @@ LLM-generated prose may explain or summarize recommendations, but it will not di
 - `tests/`: future cross-module and experiment-level tests.
 - `.github/workflows/`: future continuous-integration workflows.
 
-## Current validation
+## Benchmark validation
 
-This scaffold can be inspected with standard shell and Git commands:
+With Java 17 available, build and exercise the benchmark from the repository root:
 
 ```sh
-find . -path './.git' -prune -o -print | sort
-test -f README.md && test -f AGENTS.md && test -f docs/experiment-protocol.md && test -f docs/glossary.md
-git status --short
+benchmark/mvnw -f benchmark/pom.xml clean verify
+java -cp benchmark/shop-model/target/classes:benchmark/shop-business/target/classes:benchmark/shop-adapters/target/classes:benchmark/shop-application/target/classes com.dsarp.shop.application.ShopApplication
+python3 scripts/count_benchmark_size.py
 ```
 
-Build, test, OpenRewrite, and dashboard commands will be documented only when their implementations are added. No `rewrite:run`, deployment, or push should be performed as part of this scaffolding phase.
+See [the build and run guide](docs/build-and-run.md) and [benchmark README](benchmark/README.md). No OpenRewrite execution, architecture analysis, refactoring, deployment, or push is part of the benchmark-construction phase.
 
 ## License
 

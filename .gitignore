@@ -12,6 +12,8 @@ out/
 *.class
 *.jar
 *.war
+benchmark/.mvn/apache-maven-*/
+benchmark/.mvn/*-bin.zip
 
 # Node.js and dashboard outputs
 node_modules/

@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "component_definition": "A top-level Java package immediately below com.dsarp.shop; subpackages belong to that component regardless of Maven module.",
+  "benchmark_version": "1.0.0",
+  "smells": [
+    {
+      "smell_id": "GC-001",
+      "smell_type": "God Component",
+      "affected_components": ["megacomponent"],
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.validation",
+        "com.dsarp.shop.megacomponent.payment",
+        "com.dsarp.shop.megacomponent.inventory",
+        "com.dsarp.shop.megacomponent.notification",
+        "com.dsarp.shop.megacomponent.reporting",
+        "com.dsarp.shop.megacomponent.audit",
+        "com.dsarp.shop.megacomponent.promotion"
+      ],
+      "affected_symbols": [
+        "OrderValidationCoordinator",
+        "PaymentCoordinator",
+        "InventoryReservationService",
+        "NotificationComposer",
+        "SalesReportGenerator",
+        "AuditEventWriter",
+        "PromotionEvaluator"
+      ],
+      "intentional_dependency_edges": [
+        "application -> megacomponent",
+        "adapters -> megacomponent",
+        "megacomponent -> model",
+        "megacomponent -> shared"
+      ],
+      "expected_responsibility_groups": [
+        "validation", "payment", "inventory", "notification", "reporting", "audit", "promotion"
+      ],
+      "intended_refactoring": "Move each cohesive responsibility group from the megacomponent into its own top-level component while preserving behavior and type attribution.",
+      "expected_destinations": [
+        "com.dsarp.shop.validation",
+        "com.dsarp.shop.payment",
+        "com.dsarp.shop.inventory",
+        "com.dsarp.shop.notification",
+        "com.dsarp.shop.reporting",
+        "com.dsarp.shop.audit",
+        "com.dsarp.shop.promotion"
+      ],
+      "explanation": "Forty-nine cohesive production classes and seven responsibilities are intentionally concentrated beneath one top-level component with broad incoming and outgoing dependencies.",
+      "validation_hints": [
+        "Normalize subpackages to megacomponent before counting.",
+        "Expect at least 45 production classes and exactly seven named responsibility groups."
+      ]
+    },
+    {
+      "smell_id": "UD-001",
+      "smell_type": "Unstable Dependency",
+      "affected_components": ["ordercore", "experimentalpromotions"],
+      "affected_packages": [
+        "com.dsarp.shop.ordercore",
+        "com.dsarp.shop.experimentalpromotions.api",
+        "com.dsarp.shop.experimentalpromotions.engine",
+        "com.dsarp.shop.experimentalpromotions.rules",
+        "com.dsarp.shop.experimentalpromotions.adapters"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderPricingService"
+      ],
+      "intentional_dependency_edges": [
+        "ordercore -> experimentalpromotions.api.DiscountPolicy",
+        "experimentalpromotions -> catalog",
+        "experimentalpromotions -> customer",
+        "experimentalpromotions -> configuration",
+        "experimentalpromotions -> utilities",
+        "experimentalpromotions -> model"
+      ],
+      "expected_responsibility_groups": ["api", "engine", "rules", "adapters"],
+      "intended_refactoring": "Move DiscountPolicy to a stable contracts component and make both ordercore and experimentalpromotions depend on it.",
+      "expected_destinations": ["com.dsarp.shop.contracts.promotion.DiscountPolicy"],
+      "explanation": "The comparatively stable ordercore directly imports a contract owned by volatile and replaceable promotion experiments.",
+      "validation_hints": [
+        "Search ordercore imports and constructor signatures for DiscountPolicy.",
+        "Measure package components independently of Maven module boundaries."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+# Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.
+set -eu
+MVNW_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+MAVEN_VERSION=3.9.9
+MAVEN_HOME="${MVNW_DIR}/.mvn/apache-maven-${MAVEN_VERSION}"
+ARCHIVE="${MVNW_DIR}/.mvn/apache-maven-${MAVEN_VERSION}-bin.zip"
+if [ ! -x "${MAVEN_HOME}/bin/mvn" ]; then
+  command -v curl >/dev/null 2>&1 || { echo "curl is required to bootstrap Maven" >&2; exit 1; }
+  curl -fsSL "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/${MAVEN_VERSION}/apache-maven-${MAVEN_VERSION}-bin.zip" -o "${ARCHIVE}"
+  unzip -q "${ARCHIVE}" -d "${MVNW_DIR}/.mvn"
+fi
+exec "${MAVEN_HOME}/bin/mvn" "$@"
