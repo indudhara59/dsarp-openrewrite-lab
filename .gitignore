@@ -1,0 +1,30 @@
+# Operating-system and editor files
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Java and build outputs
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# Node.js and dashboard outputs
+node_modules/
+.next/
+.vercel/
+coverage/
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Temporary files
+.cache/
+tmp/
