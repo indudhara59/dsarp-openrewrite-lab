@@ -50,3 +50,23 @@ Severity is a percentage calculated as:
 The excess margin is normalized by the maximum possible excess (`0.80`). Edge weights are normalized by the maximum observed component-edge weight. Source stability is `1 - I(A)`. Source-class coverage is the number of distinct source classes supporting the edge divided by the source component class count.
 
 Finding IDs depend only on smell type and component identity. All lists and rows use stable lexical ordering; ranks use severity descending, detection confidence descending, then finding ID ascending. Only the execution timestamp in `run_metadata.json` may vary between equivalent runs.
+
+## Generate ranked recommendations
+
+Recommendation generation consumes only the documented baseline findings/metrics/clusters and raw class graphs:
+
+```sh
+python3 recommendation-engine/generate_recommendations.py --repository . --output analysis/recommendations
+```
+
+The ranking formula and limitations are emitted to `analysis/recommendations/ranking_formula.md`. Candidates are generated per finding and exact responsibility cluster or dependency edge. Rejected cycle/package proposals remain visible in `candidates.*` but are excluded from `recommendations.*`.
+
+An optional local Qwen-family explanation layer can be run separately:
+
+```sh
+LOCAL_LLM_ENDPOINT=http://127.0.0.1:11434/api/generate \
+LOCAL_LLM_MODEL=qwen2.5:3b-instruct \
+python3 recommendation-engine/enhance_explanations.py
+```
+
+Without those environment variables, the deterministic pipeline is complete. Enhanced text is stored separately and cannot alter IDs, symbols, refactoring kinds, operations, ranking, or machine-consumed transformation data.
