@@ -1,0 +1,35 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.dsarp.architecture.RefactorBenchmarkArchitecture
+displayName: Refactor benchmark architecture
+description: >-
+  Applies validated architectural refactorings generated from DSARP recommendations.
+recipeList:
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.reporting
+    newPackageName: com.dsarp.shop.reporting
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.promotion
+    newPackageName: com.dsarp.shop.promotion
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.audit
+    newPackageName: com.dsarp.shop.audit
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.inventory
+    newPackageName: com.dsarp.shop.inventory
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.validation
+    newPackageName: com.dsarp.shop.validation
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.payment
+    newPackageName: com.dsarp.shop.payment
+    recursive: false
+- org.openrewrite.java.ChangePackage:
+    oldPackageName: com.dsarp.shop.megacomponent.notification
+    newPackageName: com.dsarp.shop.notification
+    recursive: false

@@ -1,0 +1,46 @@
+{
+  "generated_operation_ids": [
+    "OP::1c15037279cc9a59",
+    "OP::21ef7e62564af116",
+    "OP::33520fe2e8208b9c",
+    "OP::74f6005d410bbfdf",
+    "OP::a3580c2d7e10f349",
+    "OP::e25c0ecb47d797ce",
+    "OP::e5f4488bb0575987"
+  ],
+  "generation_timestamp": "2026-08-02T11:29:39.541016Z",
+  "input_digest": "1b6d19e8ba862d02fefa7456c012e2606d066d9711c19183350a8c8525f82088",
+  "output_digest": "f1045276f042aa89ecf84594253b885b1179bb270cd8787fa6f62ad2a5448232",
+  "recipe_count": 7,
+  "skipped_operation_ids": [
+    "OP::5154d9cb685c23a6",
+    "OP::5c0580356e55bb06",
+    "OP::70c7378d610c49d5",
+    "OP::deee60495b59c81c",
+    "OP::e80f2952b9ee81da"
+  ],
+  "strict_mode": false,
+  "strict_mode_result": "NOT_REQUESTED",
+  "unsupported_operation_ids": [
+    "OP::5154d9cb685c23a6",
+    "OP::5c0580356e55bb06",
+    "OP::70c7378d610c49d5",
+    "OP::deee60495b59c81c",
+    "OP::e80f2952b9ee81da",
+    "UNSUPPORTED::UD-001"
+  ],
+  "validation_errors": [],
+  "warnings": [
+    "OP::5154d9cb685c23a6: excluded REJECTED_UNSAFE operation",
+    "OP::5154d9cb685c23a6: plan marks operation unsupported",
+    "OP::5c0580356e55bb06: excluded REJECTED_UNSAFE operation",
+    "OP::5c0580356e55bb06: plan marks operation unsupported",
+    "OP::70c7378d610c49d5: excluded REJECTED_UNSAFE operation",
+    "OP::70c7378d610c49d5: plan marks operation unsupported",
+    "OP::deee60495b59c81c: excluded REJECTED_UNSAFE operation",
+    "OP::deee60495b59c81c: plan marks operation unsupported",
+    "OP::e80f2952b9ee81da: excluded REJECTED_UNSAFE operation",
+    "OP::e80f2952b9ee81da: plan marks operation unsupported",
+    "UNSUPPORTED::UD-001: plan marks operation unsupported"
+  ]
+}

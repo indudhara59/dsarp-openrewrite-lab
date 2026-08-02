@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dsarp.org/schemas/recipe-plan-1.0.0.json",
+  "title": "DSARP OpenRewrite recipe plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plan_version",
+    "source_commit",
+    "source_analysis",
+    "composite_recipe_name",
+    "operations",
+    "unsupported_operations",
+    "global_preconditions",
+    "global_postconditions",
+    "validation_commands"
+  ],
+  "properties": {
+    "plan_version": {"type": "string", "minLength": 1},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_analysis": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/sourceAnalysis"}
+    },
+    "composite_recipe_name": {"type": "string", "minLength": 3},
+    "operations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/operation"}
+    },
+    "unsupported_operations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/unsupportedOperation"}
+    },
+    "global_preconditions": {"$ref": "#/$defs/stringArray"},
+    "global_postconditions": {"$ref": "#/$defs/stringArray"},
+    "validation_commands": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "sourceAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation_id",
+        "recommendation_id",
+        "execution_order",
+        "automation_class",
+        "recipe_name",
+        "verified_recipe_source",
+        "options",
+        "affected_symbols",
+        "affected_packages",
+        "expected_files",
+        "preconditions",
+        "postconditions",
+        "expected_dependency_edges_added",
+        "expected_dependency_edges_removed",
+        "risk",
+        "rollback_description",
+        "validation_commands"
+      ],
+      "properties": {
+        "operation_id": {"type": "string", "minLength": 1},
+        "recommendation_id": {"type": "string", "minLength": 1},
+        "execution_order": {"type": "integer", "minimum": 0},
+        "automation_class": {
+          "enum": [
+            "DECLARATIVE_BUILT_IN",
+            "CUSTOM_IMPERATIVE_RECIPE",
+            "MANUAL_REFACTORING",
+            "REJECTED_UNSAFE"
+          ]
+        },
+        "recipe_name": {"type": ["string", "null"]},
+        "verified_recipe_source": {"type": ["string", "null"]},
+        "options": {"type": "object"},
+        "affected_symbols": {"$ref": "#/$defs/stringArray"},
+        "affected_packages": {"$ref": "#/$defs/stringArray"},
+        "expected_files": {"$ref": "#/$defs/stringArray"},
+        "preconditions": {"$ref": "#/$defs/stringArray"},
+        "postconditions": {"$ref": "#/$defs/stringArray"},
+        "expected_dependency_edges_added": {"$ref": "#/$defs/stringArray"},
+        "expected_dependency_edges_removed": {"$ref": "#/$defs/stringArray"},
+        "risk": {"type": "string", "minLength": 1},
+        "rollback_description": {"type": "string"},
+        "validation_commands": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "unsupportedOperation": {
+      "oneOf": [
+        {"$ref": "#/$defs/rejectedUnsupported"},
+        {"$ref": "#/$defs/manualUnsupported"}
+      ]
+    },
+    "rejectedUnsupported": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation_id", "recommendation_id", "automation_class", "reason",
+        "required_resolution"
+      ],
+      "properties": {
+        "operation_id": {"type": "string"},
+        "recommendation_id": {"type": "string"},
+        "automation_class": {"const": "REJECTED_UNSAFE"},
+        "reason": {"type": "string"},
+        "required_resolution": {"type": "string"}
+      }
+    },
+    "manualUnsupported": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operation_id", "recommendation_id", "automation_class", "status",
+        "reason", "affected_symbols", "ordercore_reference_sources",
+        "experimental_implementation_sources", "application_wiring_sources",
+        "required_dependency_outcome", "maven_module_assessment",
+        "investigated_mechanical_mapping"
+      ],
+      "properties": {
+        "operation_id": {"type": "string"},
+        "recommendation_id": {"type": "null"},
+        "automation_class": {"const": "MANUAL_REFACTORING"},
+        "status": {"type": "string"},
+        "reason": {"type": "string"},
+        "affected_symbols": {"$ref": "#/$defs/stringArray"},
+        "ordercore_reference_sources": {"$ref": "#/$defs/stringArray"},
+        "experimental_implementation_sources": {"$ref": "#/$defs/stringArray"},
+        "application_wiring_sources": {"$ref": "#/$defs/stringArray"},
+        "required_dependency_outcome": {"$ref": "#/$defs/stringArray"},
+        "maven_module_assessment": {"type": "string"},
+        "investigated_mechanical_mapping": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["note", "recipe_name", "verified_recipe_source", "options"],
+          "properties": {
+            "note": {"type": "string"},
+            "recipe_name": {"type": "string"},
+            "verified_recipe_source": {"type": "string"},
+            "options": {"type": "object"}
+          }
+        }
+      }
+    }
+  }
+}
