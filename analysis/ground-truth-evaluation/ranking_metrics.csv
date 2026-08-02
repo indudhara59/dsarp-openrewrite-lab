@@ -1,0 +1,8 @@
+scope,metric,value
+detection,top_1_accuracy,0.5
+detection,top_3_accuracy,0.5
+detection,mean_reciprocal_rank,0.5
+recommendation,top_1_valid_accuracy,1.0
+recommendation,top_3_valid_accuracy,1.0
+recommendation,symbol_overlap_f1,0.237288
+recommendation,package_overlap_f1,0.933333

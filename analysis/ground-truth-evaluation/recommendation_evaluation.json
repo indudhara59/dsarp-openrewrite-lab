@@ -1,0 +1,378 @@
+{
+  "evaluated_recommendations": [
+    {
+      "candidate_rank": 1,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "SalesReportGenerator",
+        "responsibility_group": "reporting",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.reporting",
+        "unit_id": "reporting"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::c0750f828761f1b8",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.reporting"
+    },
+    {
+      "candidate_rank": 2,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "PromotionEvaluator",
+        "responsibility_group": "promotion",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.promotion",
+        "unit_id": "promotion"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::c9924540cef8e8d9",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.promotion"
+    },
+    {
+      "candidate_rank": 3,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "AuditEventWriter",
+        "responsibility_group": "audit",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.audit",
+        "unit_id": "audit"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::7460ee4622a5a8ce",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.audit"
+    },
+    {
+      "candidate_rank": 4,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "InventoryReservationService",
+        "responsibility_group": "inventory",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.inventory",
+        "unit_id": "inventory"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::1b2ed2a730bc0213",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.inventory"
+    },
+    {
+      "candidate_rank": 5,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "OrderValidationCoordinator",
+        "responsibility_group": "validation",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.validation",
+        "unit_id": "validation"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::6e8aa33dd0e98f53",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.validation"
+    },
+    {
+      "candidate_rank": 6,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "PaymentCoordinator",
+        "responsibility_group": "payment",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.payment",
+        "unit_id": "payment"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::d065451d7c12a381",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.payment"
+    },
+    {
+      "candidate_rank": 7,
+      "classification": "exact match",
+      "expected_unit": {
+        "expected_symbol": "NotificationComposer",
+        "responsibility_group": "notification",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.notification",
+        "unit_id": "notification"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::aa203f303dd39ffa",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.notification"
+    },
+    {
+      "candidate_rank": 8,
+      "classification": "semantically valid alternative",
+      "expected_unit": {
+        "expected_symbol": "AuditEventWriter",
+        "responsibility_group": "audit",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.audit",
+        "unit_id": "audit"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::b85da629cd93b795",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.audit"
+    },
+    {
+      "candidate_rank": 9,
+      "classification": "semantically valid alternative",
+      "expected_unit": {
+        "expected_symbol": "InventoryReservationService",
+        "responsibility_group": "inventory",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.inventory",
+        "unit_id": "inventory"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::77fffd4123157d96",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.inventory"
+    },
+    {
+      "candidate_rank": 10,
+      "classification": "semantically valid alternative",
+      "expected_unit": {
+        "expected_symbol": "PaymentCoordinator",
+        "responsibility_group": "payment",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.payment",
+        "unit_id": "payment"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::cbc8265e8dc3acc0",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.payment"
+    },
+    {
+      "candidate_rank": 11,
+      "classification": "semantically valid alternative",
+      "expected_unit": {
+        "expected_symbol": "OrderValidationCoordinator",
+        "responsibility_group": "validation",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.validation",
+        "unit_id": "validation"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::e48585444f55d1c1",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.validation"
+    },
+    {
+      "candidate_rank": 12,
+      "classification": "semantically valid alternative",
+      "expected_unit": {
+        "expected_symbol": "NotificationComposer",
+        "responsibility_group": "notification",
+        "smell_id": "GC-001",
+        "target_package": "com.dsarp.shop.notification",
+        "unit_id": "notification"
+      },
+      "finding_id": "GC::megacomponent",
+      "recommendation_id": "REC::c045b5a4696a8cdb",
+      "smell_id": "GC-001",
+      "source_symbol_count": 7,
+      "target_package": "com.dsarp.shop.notification"
+    }
+  ],
+  "expected_recommendation_units": [
+    {
+      "expected_symbol": "OrderValidationCoordinator",
+      "responsibility_group": "validation",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.validation",
+      "unit_id": "validation"
+    },
+    {
+      "expected_symbol": "PaymentCoordinator",
+      "responsibility_group": "payment",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.payment",
+      "unit_id": "payment"
+    },
+    {
+      "expected_symbol": "InventoryReservationService",
+      "responsibility_group": "inventory",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.inventory",
+      "unit_id": "inventory"
+    },
+    {
+      "expected_symbol": "NotificationComposer",
+      "responsibility_group": "notification",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.notification",
+      "unit_id": "notification"
+    },
+    {
+      "expected_symbol": "SalesReportGenerator",
+      "responsibility_group": "reporting",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.reporting",
+      "unit_id": "reporting"
+    },
+    {
+      "expected_symbol": "AuditEventWriter",
+      "responsibility_group": "audit",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.audit",
+      "unit_id": "audit"
+    },
+    {
+      "expected_symbol": "PromotionEvaluator",
+      "responsibility_group": "promotion",
+      "smell_id": "GC-001",
+      "target_package": "com.dsarp.shop.promotion",
+      "unit_id": "promotion"
+    },
+    {
+      "expected_symbol": "DiscountPolicy",
+      "responsibility_group": "stable abstraction",
+      "smell_id": "UD-001",
+      "target_package": "com.dsarp.shop.contracts.promotion",
+      "unit_id": "DiscountPolicy"
+    }
+  ],
+  "matching_rules": {
+    "detection_exact": "Normalized smell type and affected component set are equal.",
+    "detection_partial": "Normalized smell type is equal and affected component sets overlap but are not equal.",
+    "false_negative": "A ground-truth smell has no exact or partial detected finding.",
+    "false_positive": "A detected finding has no exact or partial ground-truth match.",
+    "incorrect": "The recommendation does not match an expected destination/responsibility for its finding.",
+    "package_overlap": "Set overlap of recommendation target_package values against normalized expected destination packages.",
+    "recommendation_exact": "Finding matches, expected destination package matches, expected responsibility/type matches, and the operation directly implements the intended boundary.",
+    "recommendation_partial": "Finding and destination match but expected representative symbols or responsibility evidence are incomplete.",
+    "semantic_alternative": "The intended destination and responsibility match, with a behavior-preserving alternative such as retaining a delegating facade.",
+    "symbol_overlap": "Set overlap of normalized simple names from recommendation source_symbols against all explicit ground-truth affected_symbols.",
+    "unautomatable_valid": "The recommendation is exact/partial/alternative but is explicitly non-automatable.",
+    "unsafe": "The recommendation matches semantically but has a rejection reason or HIGH architecture risk."
+  },
+  "recommendation_package_overlap": {
+    "expected_count": 8,
+    "expected_only": [
+      "com.dsarp.shop.contracts.promotion"
+    ],
+    "f1": 0.933333,
+    "intersection_count": 7,
+    "jaccard": 0.875,
+    "matched": [
+      "com.dsarp.shop.audit",
+      "com.dsarp.shop.inventory",
+      "com.dsarp.shop.notification",
+      "com.dsarp.shop.payment",
+      "com.dsarp.shop.promotion",
+      "com.dsarp.shop.reporting",
+      "com.dsarp.shop.validation"
+    ],
+    "precision": 1.0,
+    "predicted_count": 7,
+    "predicted_only": [],
+    "recall": 0.875
+  },
+  "recommendation_symbol_overlap": {
+    "expected_count": 10,
+    "expected_only": [
+      "DiscountPolicy",
+      "OrderPricingService",
+      "OrderSubmissionService"
+    ],
+    "f1": 0.237288,
+    "intersection_count": 7,
+    "jaccard": 0.134615,
+    "matched": [
+      "AuditEventWriter",
+      "InventoryReservationService",
+      "NotificationComposer",
+      "OrderValidationCoordinator",
+      "PaymentCoordinator",
+      "PromotionEvaluator",
+      "SalesReportGenerator"
+    ],
+    "precision": 0.142857,
+    "predicted_count": 49,
+    "predicted_only": [
+      "AddressValidator",
+      "AuditTrailQueryService",
+      "BackorderDecisionService",
+      "CartThresholdEvaluator",
+      "ComplianceEvidenceCollector",
+      "CouponEligibilityChecker",
+      "CustomerCohortReporter",
+      "CustomerStatusValidator",
+      "DeliveryConstraintValidator",
+      "DeliveryPerformanceReporter",
+      "DeliveryUpdateNotifier",
+      "FraudSignalValidator",
+      "InventoryAuditRecorder",
+      "InventoryAvailabilityChecker",
+      "InventoryReleaseService",
+      "InventoryTurnoverReporter",
+      "LoyaltyDiscountCalculator",
+      "MessageTemplateSelector",
+      "NotificationPreferenceResolver",
+      "OrderAuditAssembler",
+      "OrderConfirmationNotifier",
+      "OrderLineValidator",
+      "OrderVolumeAnalyzer",
+      "PaymentAuditRecorder",
+      "PaymentAuthorizationService",
+      "PaymentCaptureService",
+      "PaymentDataValidator",
+      "PaymentFailureNotifier",
+      "PaymentMethodSelector",
+      "PaymentRetryPlanner",
+      "PaymentRiskAssessor",
+      "PromotionAuditRecorder",
+      "PromotionPerformanceReporter",
+      "PromotionStackingResolver",
+      "PromotionUsageRecorder",
+      "RefundCalculationService",
+      "ReservationExpiryService",
+      "ReturnStatusNotifier",
+      "RevenueSummaryCalculator",
+      "SeasonalOfferSelector",
+      "StockAllocationPlanner",
+      "WarehouseSelector"
+    ],
+    "recall": 0.7
+  },
+  "schema_version": "1.0",
+  "summary": {
+    "exact match": 7,
+    "incorrect recommendation": 0,
+    "partial match": 0,
+    "recommendation_count": 12,
+    "semantically valid alternative": 5,
+    "top_1_valid_accuracy": 1.0,
+    "top_3_valid_accuracy": 1.0,
+    "unautomatable but valid recommendation": 0,
+    "unsafe recommendation": 0
+  },
+  "unmatched_expected_units": [
+    {
+      "expected_symbol": "DiscountPolicy",
+      "responsibility_group": "stable abstraction",
+      "smell_id": "UD-001",
+      "target_package": "com.dsarp.shop.contracts.promotion",
+      "unit_id": "DiscountPolicy"
+    }
+  ]
+}

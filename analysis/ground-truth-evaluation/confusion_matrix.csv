@@ -1,0 +1,4 @@
+smell_type,true_positives,false_positives,false_negatives,precision,recall,f1
+god component,1,0,0,1.0,1.0,1.0
+unstable dependency,0,0,1,0.0,0.0,0.0
+OVERALL,1,0,1,1.0,0.5,0.666667

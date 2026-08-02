@@ -1,0 +1,115 @@
+{
+  "by_smell_type": [
+    {
+      "f1": 1.0,
+      "false_negatives": 0,
+      "false_positives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "smell_type": "god component",
+      "true_positives": 1
+    },
+    {
+      "f1": 0.0,
+      "false_negatives": 1,
+      "false_positives": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "smell_type": "unstable dependency",
+      "true_positives": 0
+    }
+  ],
+  "detected_vs_expected_packages": {
+    "expected_count": 12,
+    "expected_only": [
+      "com.dsarp.shop.experimentalpromotions.adapters",
+      "com.dsarp.shop.experimentalpromotions.api",
+      "com.dsarp.shop.experimentalpromotions.engine",
+      "com.dsarp.shop.experimentalpromotions.rules",
+      "com.dsarp.shop.ordercore"
+    ],
+    "f1": 0.736842,
+    "intersection_count": 7,
+    "jaccard": 0.583333,
+    "matched": [
+      "com.dsarp.shop.megacomponent.audit",
+      "com.dsarp.shop.megacomponent.inventory",
+      "com.dsarp.shop.megacomponent.notification",
+      "com.dsarp.shop.megacomponent.payment",
+      "com.dsarp.shop.megacomponent.promotion",
+      "com.dsarp.shop.megacomponent.reporting",
+      "com.dsarp.shop.megacomponent.validation"
+    ],
+    "precision": 1.0,
+    "predicted_count": 7,
+    "predicted_only": [],
+    "recall": 0.583333
+  },
+  "matched_findings": [
+    {
+      "detected_components": [
+        "megacomponent"
+      ],
+      "expected_components": [
+        "megacomponent"
+      ],
+      "finding_id": "GC::megacomponent",
+      "quality": "exact match",
+      "rank": 1,
+      "smell_id": "GC-001"
+    }
+  ],
+  "matching_rules": {
+    "detection_exact": "Normalized smell type and affected component set are equal.",
+    "detection_partial": "Normalized smell type is equal and affected component sets overlap but are not equal.",
+    "false_negative": "A ground-truth smell has no exact or partial detected finding.",
+    "false_positive": "A detected finding has no exact or partial ground-truth match.",
+    "incorrect": "The recommendation does not match an expected destination/responsibility for its finding.",
+    "package_overlap": "Set overlap of recommendation target_package values against normalized expected destination packages.",
+    "recommendation_exact": "Finding matches, expected destination package matches, expected responsibility/type matches, and the operation directly implements the intended boundary.",
+    "recommendation_partial": "Finding and destination match but expected representative symbols or responsibility evidence are incomplete.",
+    "semantic_alternative": "The intended destination and responsibility match, with a behavior-preserving alternative such as retaining a delegating facade.",
+    "symbol_overlap": "Set overlap of normalized simple names from recommendation source_symbols against all explicit ground-truth affected_symbols.",
+    "unautomatable_valid": "The recommendation is exact/partial/alternative but is explicitly non-automatable.",
+    "unsafe": "The recommendation matches semantically but has a rejection reason or HIGH architecture risk."
+  },
+  "missed_ground_truth_smells": [
+    {
+      "expected_components": [
+        "ordercore",
+        "experimentalpromotions"
+      ],
+      "measured_reason": "Measured instability difference 0.047619 did not satisfy the unchanged condition I(source) + 0.20 < I(target).",
+      "measured_values": {
+        "condition_satisfied": false,
+        "configured_margin": 0.2,
+        "instability_difference": 0.047619,
+        "source_component": "ordercore",
+        "source_instability": 0.666667,
+        "target_component": "experimentalpromotions",
+        "target_instability": 0.714286
+      },
+      "smell_id": "UD-001",
+      "smell_type": "Unstable Dependency"
+    }
+  ],
+  "overall": {
+    "f1": 0.666667,
+    "false_negatives": 1,
+    "false_positives": 0,
+    "precision": 1.0,
+    "recall": 0.5,
+    "true_positives": 1
+  },
+  "ranking_metrics": {
+    "mean_reciprocal_rank": 0.5,
+    "rank_by_expected_smell": {
+      "GC-001": 1,
+      "UD-001": 0
+    },
+    "top_1_accuracy": 0.5,
+    "top_3_accuracy": 0.5
+  },
+  "schema_version": "1.0",
+  "unmatched_findings": []
+}
