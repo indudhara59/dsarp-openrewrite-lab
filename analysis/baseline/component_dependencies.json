@@ -1,0 +1,165 @@
+{
+  "component_dependencies": [
+    {
+      "source_component": "adapters",
+      "target_component": "megacomponent",
+      "weight": 10
+    },
+    {
+      "source_component": "adapters",
+      "target_component": "model",
+      "weight": 20
+    },
+    {
+      "source_component": "application",
+      "target_component": "experimentalpromotions",
+      "weight": 2
+    },
+    {
+      "source_component": "application",
+      "target_component": "megacomponent",
+      "weight": 6
+    },
+    {
+      "source_component": "application",
+      "target_component": "model",
+      "weight": 12
+    },
+    {
+      "source_component": "application",
+      "target_component": "ordercore",
+      "weight": 1
+    },
+    {
+      "source_component": "cart",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "cart",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "catalog",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "catalog",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "configuration",
+      "target_component": "model",
+      "weight": 4
+    },
+    {
+      "source_component": "configuration",
+      "target_component": "shared",
+      "weight": 2
+    },
+    {
+      "source_component": "customer",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "customer",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "delivery",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "delivery",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "experimentalpromotions",
+      "target_component": "catalog",
+      "weight": 11
+    },
+    {
+      "source_component": "experimentalpromotions",
+      "target_component": "configuration",
+      "weight": 11
+    },
+    {
+      "source_component": "experimentalpromotions",
+      "target_component": "customer",
+      "weight": 11
+    },
+    {
+      "source_component": "experimentalpromotions",
+      "target_component": "model",
+      "weight": 12
+    },
+    {
+      "source_component": "experimentalpromotions",
+      "target_component": "utilities",
+      "weight": 11
+    },
+    {
+      "source_component": "fraud",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "fraud",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "megacomponent",
+      "target_component": "model",
+      "weight": 98
+    },
+    {
+      "source_component": "megacomponent",
+      "target_component": "shared",
+      "weight": 49
+    },
+    {
+      "source_component": "ordercore",
+      "target_component": "experimentalpromotions",
+      "weight": 12
+    },
+    {
+      "source_component": "ordercore",
+      "target_component": "model",
+      "weight": 24
+    },
+    {
+      "source_component": "returns",
+      "target_component": "model",
+      "weight": 8
+    },
+    {
+      "source_component": "returns",
+      "target_component": "shared",
+      "weight": 4
+    },
+    {
+      "source_component": "shared",
+      "target_component": "model",
+      "weight": 4
+    },
+    {
+      "source_component": "utilities",
+      "target_component": "model",
+      "weight": 4
+    },
+    {
+      "source_component": "utilities",
+      "target_component": "shared",
+      "weight": 2
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,33 @@
+{
+  "analyzer_unresolved_symbol_count": 0,
+  "detected_at_commit": "6ea8a19d66c41ec76698bb8480221ffaede497b8",
+  "detector_version": "1.0.0",
+  "deterministic_sort": "severity desc, confidence desc, finding_id asc",
+  "execution_timestamp": "2026-08-02T09:28:53.729712Z",
+  "formula_versions": [
+    "god-component-v1",
+    "unstable-dependency-v1"
+  ],
+  "god_component_threshold": 0.6,
+  "ground_truth_accessed": false,
+  "input_allowlist": [
+    "classes.json",
+    "class_dependencies.json",
+    "component_dependencies.json",
+    "component_metrics.json",
+    "responsibility_clusters.json",
+    "analyzer_metadata.json"
+  ],
+  "input_sha256": {
+    "analyzer_metadata.json": "150c2f02d499ee48ba0c055e281e68d5de153d8791d3e83c0f9782bcd09edf46",
+    "class_dependencies.json": "12e8658a768d2dd17e73c5d8a50d4321d92d200f1b86f0f232806a5a88b75d1d",
+    "classes.json": "7fdcb330398800cb9cbdb1a3c250b5a21de9cf37bd2f885595f3661b3e72f61c",
+    "component_dependencies.json": "1e0e0e556c5009b722204303c0d31adf2807f55bea5b532120ce03368b07dc8e",
+    "component_metrics.json": "8ccfa52990ba33c9ea4e18ed7bef21793568f3b0864056cae0803ee541ef1a49",
+    "responsibility_clusters.json": "1b88421dd59504b841116d59367b5e0332dd69496808fed4c27495cbf6d28c65"
+  },
+  "missing_data": [],
+  "schema_version": "1.0",
+  "unstable_dependency_margin": 0.2,
+  "warnings": []
+}
