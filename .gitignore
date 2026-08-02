@@ -14,6 +14,8 @@ out/
 *.war
 benchmark/.mvn/apache-maven-*/
 benchmark/.mvn/*-bin.zip
+architecture-analyzer/.mvn/apache-maven-*/
+architecture-analyzer/.mvn/*-bin.zip
 
 # Node.js and dashboard outputs
 node_modules/

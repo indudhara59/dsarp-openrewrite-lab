@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "component_metrics.schema.json",
+  "type": "object", "required": ["schema_version", "component_metrics"], "additionalProperties": false,
+  "properties": {"schema_version": {"const": "1.0"}, "component_metrics": {"type": "array", "items": {
+    "type": "object",
+    "required": ["component", "production_class_count", "production_loc", "package_count", "ca", "ce", "instability", "incoming_component_edges", "outgoing_component_edges", "weighted_incoming_dependency_count", "weighted_outgoing_dependency_count", "fan_in", "fan_out", "internal_class_dependency_count", "internal_dependency_density", "percentage_total_production_classes", "percentage_total_production_loc", "degree_centrality"],
+    "properties": {
+      "component": {"type": "string"}, "production_class_count": {"type": "integer"}, "production_loc": {"type": "integer"},
+      "package_count": {"type": "integer"}, "ca": {"type": "integer"}, "ce": {"type": "integer"},
+      "instability": {"type": "number", "minimum": 0, "maximum": 1},
+      "incoming_component_edges": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+      "outgoing_component_edges": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+      "weighted_incoming_dependency_count": {"type": "integer"}, "weighted_outgoing_dependency_count": {"type": "integer"},
+      "fan_in": {"type": "integer"}, "fan_out": {"type": "integer"}, "internal_class_dependency_count": {"type": "integer"},
+      "internal_dependency_density": {"type": "number"}, "percentage_total_production_classes": {"type": "number"},
+      "percentage_total_production_loc": {"type": "number"}, "degree_centrality": {"type": "number"}
+    }
+  }}}
+}

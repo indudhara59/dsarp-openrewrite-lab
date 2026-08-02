@@ -1,0 +1,2821 @@
+{
+  "schema_version": "1.0",
+  "classes": [
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/audit/InMemoryAuditStore.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.audit",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/delivery/InMemoryDeliveryGateway.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.delivery",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/notification/ConsoleNotificationAdapter.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.notification",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/notification/RecordingNotificationAdapter.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.notification",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/payment/DeterministicFraudGateway.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.payment",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/payment/InMemoryPaymentGateway.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.payment",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryCatalogRepository.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.repository",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryCustomerRepository.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.repository",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryInventoryRepository.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.repository",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+      "source_file": "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryOrderRepository.java",
+      "maven_module": "shop-adapters",
+      "top_level_component": "adapters",
+      "package": "com.dsarp.shop.adapters.repository",
+      "loc": 40,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.CartUseCase",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/CartUseCase.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 19,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.CatalogUseCase",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/CatalogUseCase.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 19,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.CustomerUseCase",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/CustomerUseCase.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 19,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.OrderWorkflow",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 39,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.ordercore.OrderSubmissionService"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.application.CartUseCase",
+        "com.dsarp.shop.application.CatalogUseCase",
+        "com.dsarp.shop.application.CustomerUseCase",
+        "com.dsarp.shop.application.ReturnUseCase",
+        "com.dsarp.shop.application.ShopApplication"
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.ReturnUseCase",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/ReturnUseCase.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 19,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.application.ShopApplication",
+      "source_file": "shop-application/src/main/java/com/dsarp/shop/application/ShopApplication.java",
+      "maven_module": "shop-application",
+      "top_level_component": "application",
+      "package": "com.dsarp.shop.application",
+      "loc": 25,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 3
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.cart.CartAbandonmentService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/cart/CartAbandonmentService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "cart",
+      "package": "com.dsarp.shop.cart",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.cart.CartCreationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/cart/CartCreationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "cart",
+      "package": "com.dsarp.shop.cart",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.cart.CartLineService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/cart/CartLineService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "cart",
+      "package": "com.dsarp.shop.cart",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.cart.CartPricingService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/cart/CartPricingService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "cart",
+      "package": "com.dsarp.shop.cart",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.catalog.CatalogSearchService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/catalog/CatalogSearchService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "catalog",
+      "package": "com.dsarp.shop.catalog",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.catalog.CategoryNavigationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/catalog/CategoryNavigationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "catalog",
+      "package": "com.dsarp.shop.catalog",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.catalog.ProductAvailabilityService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/catalog/ProductAvailabilityService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "catalog",
+      "package": "com.dsarp.shop.catalog",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.catalog.ProductPricingService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/catalog/ProductPricingService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "catalog",
+      "package": "com.dsarp.shop.catalog",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.configuration.FeatureConfigurationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/configuration/FeatureConfigurationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "configuration",
+      "package": "com.dsarp.shop.configuration",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.configuration.PolicyConfigurationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/configuration/PolicyConfigurationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "configuration",
+      "package": "com.dsarp.shop.configuration",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.customer.CustomerConsentService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/customer/CustomerConsentService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "customer",
+      "package": "com.dsarp.shop.customer",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.customer.CustomerProfileService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/customer/CustomerProfileService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "customer",
+      "package": "com.dsarp.shop.customer",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.customer.CustomerRegistrationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/customer/CustomerRegistrationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "customer",
+      "package": "com.dsarp.shop.customer",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.customer.CustomerTierService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/customer/CustomerTierService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "customer",
+      "package": "com.dsarp.shop.customer",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.delivery.DeliveryExceptionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/delivery/DeliveryExceptionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "delivery",
+      "package": "com.dsarp.shop.delivery",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.delivery.DeliveryQuoteService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/delivery/DeliveryQuoteService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "delivery",
+      "package": "com.dsarp.shop.delivery",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.delivery.DeliverySchedulingService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/delivery/DeliverySchedulingService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "delivery",
+      "package": "com.dsarp.shop.delivery",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.delivery.DeliveryTrackingService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/delivery/DeliveryTrackingService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "delivery",
+      "package": "com.dsarp.shop.delivery",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/adapters/CatalogPromotionAdapter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.adapters",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/adapters/CustomerSegmentAdapter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.adapters",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/adapters/PromotionConfigurationAdapter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.adapters",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/adapters/RemoteCampaignSnapshotAdapter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.adapters",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/api/DiscountPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.api",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator"
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/engine/ExperimentalPromotionEngine.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.engine",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/engine/PromotionExperimentRouter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.engine",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/rules/AbandonedCartRecoveryPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.rules",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/rules/CategoryBoostPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.rules",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/rules/FlashSaleDiscountPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.rules",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/rules/LoyaltyMultiplierPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.rules",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/experimentalpromotions/rules/NewCustomerDiscountPolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "experimentalpromotions",
+      "package": "com.dsarp.shop.experimentalpromotions.rules",
+      "loc": 47,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.utilities.BusinessClockService"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/fraud/AccountTakeoverCheckService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "fraud",
+      "package": "com.dsarp.shop.fraud",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.fraud.AddressRiskService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/fraud/AddressRiskService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "fraud",
+      "package": "com.dsarp.shop.fraud",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.fraud.FraudAssessmentService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/fraud/FraudAssessmentService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "fraud",
+      "package": "com.dsarp.shop.fraud",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.fraud.VelocityCheckService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/fraud/VelocityCheckService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "fraud",
+      "package": "com.dsarp.shop.fraud",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditEventWriter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditTrailQueryService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/ComplianceEvidenceCollector.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/InventoryAuditRecorder.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/OrderAuditAssembler.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PaymentAuditRecorder.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PromotionAuditRecorder.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.audit",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/BackorderDecisionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryAvailabilityChecker.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReleaseService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReservationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/ReservationExpiryService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/StockAllocationPlanner.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/WarehouseSelector.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.inventory",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/DeliveryUpdateNotifier.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/MessageTemplateSelector.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationComposer.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationPreferenceResolver.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/OrderConfirmationNotifier.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/PaymentFailureNotifier.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/ReturnStatusNotifier.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.notification",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentAuthorizationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCaptureService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCoordinator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentMethodSelector.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRetryPlanner.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRiskAssessor.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/RefundCalculationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.payment",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/CartThresholdEvaluator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/CouponEligibilityChecker.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/LoyaltyDiscountCalculator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionEvaluator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionStackingResolver.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionUsageRecorder.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/SeasonalOfferSelector.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.promotion",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/CustomerCohortReporter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/DeliveryPerformanceReporter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/InventoryTurnoverReporter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/OrderVolumeAnalyzer.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/PromotionPerformanceReporter.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/RevenueSummaryCalculator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/SalesReportGenerator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.reporting",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.AddressValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/AddressValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/CustomerStatusValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/DeliveryConstraintValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/FraudSignalValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderLineValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderValidationCoordinator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/PaymentDataValidator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "megacomponent",
+      "package": "com.dsarp.shop.megacomponent.validation",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.Address",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/Address.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 8
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.AuditEvent",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/AuditEvent.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.CapabilityDecision",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/CapabilityDecision.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 26,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+        "com.dsarp.shop.application.CartUseCase",
+        "com.dsarp.shop.application.CatalogUseCase",
+        "com.dsarp.shop.application.CustomerUseCase",
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.application.ReturnUseCase",
+        "com.dsarp.shop.application.ShopApplication",
+        "com.dsarp.shop.cart.CartAbandonmentService",
+        "com.dsarp.shop.cart.CartCreationService",
+        "com.dsarp.shop.cart.CartLineService",
+        "com.dsarp.shop.cart.CartPricingService",
+        "com.dsarp.shop.catalog.CatalogSearchService",
+        "com.dsarp.shop.catalog.CategoryNavigationService",
+        "com.dsarp.shop.catalog.ProductAvailabilityService",
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.configuration.PolicyConfigurationService",
+        "com.dsarp.shop.customer.CustomerConsentService",
+        "com.dsarp.shop.customer.CustomerProfileService",
+        "com.dsarp.shop.customer.CustomerRegistrationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.delivery.DeliveryExceptionService",
+        "com.dsarp.shop.delivery.DeliveryQuoteService",
+        "com.dsarp.shop.delivery.DeliverySchedulingService",
+        "com.dsarp.shop.delivery.DeliveryTrackingService",
+        "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+        "com.dsarp.shop.fraud.AddressRiskService",
+        "com.dsarp.shop.fraud.FraudAssessmentService",
+        "com.dsarp.shop.fraud.VelocityCheckService",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator",
+        "com.dsarp.shop.returns.ReturnAuthorizationService",
+        "com.dsarp.shop.returns.ReturnEligibilityService",
+        "com.dsarp.shop.returns.ReturnInspectionService",
+        "com.dsarp.shop.returns.ReturnResolutionService",
+        "com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.shared.BusinessCapability",
+        "com.dsarp.shop.utilities.BusinessClockService",
+        "com.dsarp.shop.utilities.ReferenceGenerationService"
+      ],
+      "public_type_count": 1,
+      "method_count": 10
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.CartId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/CartId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.CouponCode",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/CouponCode.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.CustomerId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/CustomerId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.CustomerProfile"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.CustomerProfile",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/CustomerProfile.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CustomerId",
+        "com.dsarp.shop.model.EmailAddress"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.DeliveryId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/DeliveryId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.DeliveryWindow",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/DeliveryWindow.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.EmailAddress",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/EmailAddress.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.CustomerProfile"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.InventoryPosition",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/InventoryPosition.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.ProductId"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.Money",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/Money.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.OrderLine",
+        "com.dsarp.shop.model.ProductSnapshot",
+        "com.dsarp.shop.model.PromotionAdjustment",
+        "com.dsarp.shop.model.SalesSnapshot"
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.NotificationMessage",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/NotificationMessage.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.OrderContext",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/OrderContext.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 36,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+        "com.dsarp.shop.application.CartUseCase",
+        "com.dsarp.shop.application.CatalogUseCase",
+        "com.dsarp.shop.application.CustomerUseCase",
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.application.ReturnUseCase",
+        "com.dsarp.shop.application.ShopApplication",
+        "com.dsarp.shop.cart.CartAbandonmentService",
+        "com.dsarp.shop.cart.CartCreationService",
+        "com.dsarp.shop.cart.CartLineService",
+        "com.dsarp.shop.cart.CartPricingService",
+        "com.dsarp.shop.catalog.CatalogSearchService",
+        "com.dsarp.shop.catalog.CategoryNavigationService",
+        "com.dsarp.shop.catalog.ProductAvailabilityService",
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.configuration.PolicyConfigurationService",
+        "com.dsarp.shop.customer.CustomerConsentService",
+        "com.dsarp.shop.customer.CustomerProfileService",
+        "com.dsarp.shop.customer.CustomerRegistrationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.delivery.DeliveryExceptionService",
+        "com.dsarp.shop.delivery.DeliveryQuoteService",
+        "com.dsarp.shop.delivery.DeliverySchedulingService",
+        "com.dsarp.shop.delivery.DeliveryTrackingService",
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+        "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+        "com.dsarp.shop.fraud.AddressRiskService",
+        "com.dsarp.shop.fraud.FraudAssessmentService",
+        "com.dsarp.shop.fraud.VelocityCheckService",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator",
+        "com.dsarp.shop.returns.ReturnAuthorizationService",
+        "com.dsarp.shop.returns.ReturnEligibilityService",
+        "com.dsarp.shop.returns.ReturnInspectionService",
+        "com.dsarp.shop.returns.ReturnResolutionService",
+        "com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.shared.BusinessCapability",
+        "com.dsarp.shop.utilities.BusinessClockService",
+        "com.dsarp.shop.utilities.ReferenceGenerationService"
+      ],
+      "public_type_count": 1,
+      "method_count": 13
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.OrderId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/OrderId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.ReturnRequest"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.OrderLine",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/OrderLine.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.Money",
+        "com.dsarp.shop.model.ProductId"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.PaymentAuthorization",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/PaymentAuthorization.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.PaymentId"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.PaymentId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/PaymentId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.PaymentAuthorization"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.ProductId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/ProductId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.InventoryPosition",
+        "com.dsarp.shop.model.OrderLine",
+        "com.dsarp.shop.model.ProductSnapshot"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.ProductSnapshot",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/ProductSnapshot.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.Money",
+        "com.dsarp.shop.model.ProductId"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 8
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.PromotionAdjustment",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/PromotionAdjustment.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.Money"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 6
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.ReturnId",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/ReturnId.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.model.ReturnRequest"
+      ],
+      "public_type_count": 1,
+      "method_count": 5
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.ReturnRequest",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/ReturnRequest.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.OrderId",
+        "com.dsarp.shop.model.ReturnId"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.model.SalesSnapshot",
+      "source_file": "shop-model/src/main/java/com/dsarp/shop/model/SalesSnapshot.java",
+      "maven_module": "shop-model",
+      "top_level_component": "model",
+      "package": "com.dsarp.shop.model",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.Money"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 7
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderCancellationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderCancellationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderCompletionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderCompletionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderDecisionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderDecisionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderFactory",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderFactory.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderHistoryService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderHistoryService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderIdentityService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderIdentityService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderLifecycleService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderLifecycleService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderLinePolicy",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderLinePolicy.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderPricingService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderPricingService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderStateMachine",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderStateMachine.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderSubmissionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderSubmissionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.ordercore.OrderTotalCalculator",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/ordercore/OrderTotalCalculator.java",
+      "maven_module": "shop-business",
+      "top_level_component": "ordercore",
+      "package": "com.dsarp.shop.ordercore",
+      "loc": 85,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 11
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.returns.ReturnAuthorizationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/returns/ReturnAuthorizationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "returns",
+      "package": "com.dsarp.shop.returns",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.returns.ReturnEligibilityService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/returns/ReturnEligibilityService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "returns",
+      "package": "com.dsarp.shop.returns",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.returns.ReturnInspectionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/returns/ReturnInspectionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "returns",
+      "package": "com.dsarp.shop.returns",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.returns.ReturnResolutionService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/returns/ReturnResolutionService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "returns",
+      "package": "com.dsarp.shop.returns",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.shared.AbstractBusinessCapability",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/shared/AbstractBusinessCapability.java",
+      "maven_module": "shop-business",
+      "top_level_component": "shared",
+      "package": "com.dsarp.shop.shared",
+      "loc": 77,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.BusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.cart.CartAbandonmentService",
+        "com.dsarp.shop.cart.CartCreationService",
+        "com.dsarp.shop.cart.CartLineService",
+        "com.dsarp.shop.cart.CartPricingService",
+        "com.dsarp.shop.catalog.CatalogSearchService",
+        "com.dsarp.shop.catalog.CategoryNavigationService",
+        "com.dsarp.shop.catalog.ProductAvailabilityService",
+        "com.dsarp.shop.catalog.ProductPricingService",
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.configuration.PolicyConfigurationService",
+        "com.dsarp.shop.customer.CustomerConsentService",
+        "com.dsarp.shop.customer.CustomerProfileService",
+        "com.dsarp.shop.customer.CustomerRegistrationService",
+        "com.dsarp.shop.customer.CustomerTierService",
+        "com.dsarp.shop.delivery.DeliveryExceptionService",
+        "com.dsarp.shop.delivery.DeliveryQuoteService",
+        "com.dsarp.shop.delivery.DeliverySchedulingService",
+        "com.dsarp.shop.delivery.DeliveryTrackingService",
+        "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+        "com.dsarp.shop.fraud.AddressRiskService",
+        "com.dsarp.shop.fraud.FraudAssessmentService",
+        "com.dsarp.shop.fraud.VelocityCheckService",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+        "com.dsarp.shop.returns.ReturnAuthorizationService",
+        "com.dsarp.shop.returns.ReturnEligibilityService",
+        "com.dsarp.shop.returns.ReturnInspectionService",
+        "com.dsarp.shop.returns.ReturnResolutionService",
+        "com.dsarp.shop.utilities.BusinessClockService",
+        "com.dsarp.shop.utilities.ReferenceGenerationService"
+      ],
+      "public_type_count": 1,
+      "method_count": 9
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.shared.BusinessCapability",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/shared/BusinessCapability.java",
+      "maven_module": "shop-business",
+      "top_level_component": "shared",
+      "package": "com.dsarp.shop.shared",
+      "loc": 10,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "public_type_count": 1,
+      "method_count": 2
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.utilities.BusinessClockService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/utilities/BusinessClockService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "utilities",
+      "package": "com.dsarp.shop.utilities",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    },
+    {
+      "fully_qualified_class_name": "com.dsarp.shop.utilities.ReferenceGenerationService",
+      "source_file": "shop-business/src/main/java/com/dsarp/shop/utilities/ReferenceGenerationService.java",
+      "maven_module": "shop-business",
+      "top_level_component": "utilities",
+      "package": "com.dsarp.shop.utilities",
+      "loc": 124,
+      "outgoing_class_dependencies": [
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "incoming_class_dependencies": [
+      ],
+      "public_type_count": 1,
+      "method_count": 16
+    }
+  ]
+}

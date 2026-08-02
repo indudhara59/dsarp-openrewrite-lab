@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "analyzer_metadata.schema.json",
+  "type": "object",
+  "required": ["schema_version", "analyzer_version", "execution_timestamp", "git_commit_sha", "java_version", "maven_version", "component_rule", "included_source_roots", "excluded_source_roots", "dependency_extraction_method", "formulas", "warnings", "unresolved_symbol_count"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "analyzer_version": {"type": "string"},
+    "execution_timestamp": {"type": "string", "format": "date-time"}, "git_commit_sha": {"type": "string"},
+    "java_version": {"type": "string"}, "maven_version": {"type": "string"}, "component_rule": {"type": "string"},
+    "included_source_roots": {"type": "array", "items": {"type": "string"}},
+    "excluded_source_roots": {"type": "array", "items": {"type": "string"}},
+    "dependency_extraction_method": {"type": "string"}, "formulas": {"type": "object"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "unresolved_symbol_count": {"type": "integer", "minimum": 0},
+    "internal_symbol_reference_count": {"type": "integer", "minimum": 0},
+    "strict_mode": {"type": "boolean"}, "unresolved_symbol_percentage": {"type": "number", "minimum": 0}
+  }
+}

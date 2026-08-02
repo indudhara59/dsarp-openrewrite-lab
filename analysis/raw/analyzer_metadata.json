@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "analyzer_version": "1.0.0",
+  "execution_timestamp": "2026-08-01T12:34:42.326781Z",
+  "git_commit_sha": "6ea8a19d66c41ec76698bb8480221ffaede497b8",
+  "java_version": "17.0.20",
+  "maven_version": "Apache Maven 3.9.9 (pinned wrapper distribution)",
+  "component_rule": "First package segment following com.dsarp.shop; subpackages remain in that component.",
+  "dependency_extraction_method": "JVM class-file semantic references: constant-pool class/member owners, descriptors, generic signatures, inheritance, interfaces, annotations and exception metadata",
+  "strict_mode": true,
+  "unresolved_symbol_percentage": 0.0,
+  "included_source_roots": [
+    "/Users/indudhara/Documents/Coding/Github/dsarp-openrewrite-lab/benchmark/shop-adapters/src/main/java",
+    "/Users/indudhara/Documents/Coding/Github/dsarp-openrewrite-lab/benchmark/shop-application/src/main/java",
+    "/Users/indudhara/Documents/Coding/Github/dsarp-openrewrite-lab/benchmark/shop-business/src/main/java",
+    "/Users/indudhara/Documents/Coding/Github/dsarp-openrewrite-lab/benchmark/shop-model/src/main/java"
+  ],
+  "excluded_source_roots": [
+    "**/src/test/**",
+    "**/target/generated-sources/**",
+    "architecture-analyzer/**",
+    "dashboard/**",
+    "Maven/plugin implementation classes"
+  ],
+  "formulas": {
+    "instability": "Ce / (Ca + Ce), or 0 when Ca + Ce = 0",
+    "percentage_total_classes": "100 * component classes / total production classes",
+    "percentage_total_loc": "100 * component LOC / total production LOC",
+    "degree_centrality": "(Ca + Ce) / (component_count - 1)",
+    "internal_dependency_density": "directed internal class edges / (class_count * (class_count - 1))"
+  },
+  "warnings": [
+  ],
+  "unresolved_symbol_count": 0,
+  "internal_symbol_reference_count": 407
+}

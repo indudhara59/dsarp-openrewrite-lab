@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classes.schema.json",
+  "type": "object",
+  "required": ["schema_version", "classes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fully_qualified_class_name", "source_file", "maven_module", "top_level_component", "package", "loc", "outgoing_class_dependencies", "incoming_class_dependencies", "public_type_count", "method_count"],
+        "properties": {
+          "fully_qualified_class_name": {"type": "string"}, "source_file": {"type": "string"},
+          "maven_module": {"type": "string"}, "top_level_component": {"type": "string"},
+          "package": {"type": "string"}, "loc": {"type": "integer", "minimum": 0},
+          "outgoing_class_dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "incoming_class_dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "public_type_count": {"type": "integer", "minimum": 0}, "method_count": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}

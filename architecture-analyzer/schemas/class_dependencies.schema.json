@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "class_dependencies.schema.json",
+  "type": "object", "required": ["schema_version", "class_dependencies"], "additionalProperties": false,
+  "properties": {"schema_version": {"const": "1.0"}, "class_dependencies": {"type": "array", "items": {
+    "type": "object", "required": ["source_class", "target_class"], "additionalProperties": false,
+    "properties": {"source_class": {"type": "string"}, "target_class": {"type": "string"}}
+  }}}
+}

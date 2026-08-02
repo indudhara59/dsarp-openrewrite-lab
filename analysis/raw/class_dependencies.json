@@ -1,0 +1,1633 @@
+{
+  "schema_version": "1.0",
+  "class_dependencies": [
+    {
+      "source_class": "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+      "target_class": "com.dsarp.shop.megacomponent.audit.AuditEventWriter"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.audit.InMemoryAuditStore",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+      "target_class": "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+      "target_class": "com.dsarp.shop.megacomponent.notification.NotificationComposer"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+      "target_class": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+      "target_class": "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+      "target_class": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+      "target_class": "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+      "target_class": "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+      "target_class": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+      "target_class": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.adapters.repository.InMemoryOrderRepository",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CartUseCase",
+      "target_class": "com.dsarp.shop.application.OrderWorkflow"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CartUseCase",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CartUseCase",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CatalogUseCase",
+      "target_class": "com.dsarp.shop.application.OrderWorkflow"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CatalogUseCase",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CatalogUseCase",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CustomerUseCase",
+      "target_class": "com.dsarp.shop.application.OrderWorkflow"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CustomerUseCase",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.CustomerUseCase",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.audit.AuditEventWriter"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.OrderWorkflow",
+      "target_class": "com.dsarp.shop.ordercore.OrderSubmissionService"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ReturnUseCase",
+      "target_class": "com.dsarp.shop.application.OrderWorkflow"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ReturnUseCase",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ReturnUseCase",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ShopApplication",
+      "target_class": "com.dsarp.shop.application.OrderWorkflow"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ShopApplication",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.application.ShopApplication",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartAbandonmentService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartAbandonmentService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartAbandonmentService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartCreationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartCreationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartCreationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartLineService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartLineService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartLineService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartPricingService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartPricingService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.cart.CartPricingService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CatalogSearchService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CatalogSearchService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CatalogSearchService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CategoryNavigationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CategoryNavigationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.CategoryNavigationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductAvailabilityService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductAvailabilityService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductAvailabilityService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductPricingService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductPricingService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.catalog.ProductPricingService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.FeatureConfigurationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.FeatureConfigurationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.FeatureConfigurationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.PolicyConfigurationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.PolicyConfigurationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.configuration.PolicyConfigurationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerConsentService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerConsentService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerConsentService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerProfileService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerProfileService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerProfileService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerRegistrationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerRegistrationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerRegistrationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerTierService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerTierService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.customer.CustomerTierService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryExceptionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryExceptionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryExceptionService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryQuoteService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryQuoteService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryQuoteService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliverySchedulingService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliverySchedulingService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliverySchedulingService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryTrackingService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryTrackingService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.delivery.DeliveryTrackingService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.catalog.ProductPricingService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.configuration.FeatureConfigurationService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.customer.CustomerTierService"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy",
+      "target_class": "com.dsarp.shop.utilities.BusinessClockService"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AddressRiskService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AddressRiskService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.AddressRiskService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.FraudAssessmentService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.FraudAssessmentService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.FraudAssessmentService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.VelocityCheckService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.VelocityCheckService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.fraud.VelocityCheckService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.inventory.WarehouseSelector",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.payment.RefundCalculationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.AddressValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.AddressValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.AddressValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.megacomponent.validation.PaymentDataValidator",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.CustomerProfile",
+      "target_class": "com.dsarp.shop.model.CustomerId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.CustomerProfile",
+      "target_class": "com.dsarp.shop.model.EmailAddress"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.InventoryPosition",
+      "target_class": "com.dsarp.shop.model.ProductId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.OrderLine",
+      "target_class": "com.dsarp.shop.model.Money"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.OrderLine",
+      "target_class": "com.dsarp.shop.model.ProductId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.PaymentAuthorization",
+      "target_class": "com.dsarp.shop.model.PaymentId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.ProductSnapshot",
+      "target_class": "com.dsarp.shop.model.Money"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.ProductSnapshot",
+      "target_class": "com.dsarp.shop.model.ProductId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.PromotionAdjustment",
+      "target_class": "com.dsarp.shop.model.Money"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.ReturnRequest",
+      "target_class": "com.dsarp.shop.model.OrderId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.ReturnRequest",
+      "target_class": "com.dsarp.shop.model.ReturnId"
+    },
+    {
+      "source_class": "com.dsarp.shop.model.SalesSnapshot",
+      "target_class": "com.dsarp.shop.model.Money"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCancellationService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCancellationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCancellationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCompletionService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCompletionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderCompletionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderDecisionService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderDecisionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderDecisionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderFactory",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderFactory",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderFactory",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderHistoryService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderHistoryService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderHistoryService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderIdentityService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderIdentityService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderIdentityService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLifecycleService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLifecycleService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLifecycleService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLinePolicy",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLinePolicy",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderLinePolicy",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderPricingService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderPricingService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderPricingService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderStateMachine",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderStateMachine",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderStateMachine",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderSubmissionService",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderSubmissionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderSubmissionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderTotalCalculator",
+      "target_class": "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderTotalCalculator",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.ordercore.OrderTotalCalculator",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnAuthorizationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnAuthorizationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnAuthorizationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnEligibilityService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnEligibilityService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnEligibilityService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnInspectionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnInspectionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnInspectionService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnResolutionService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnResolutionService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.returns.ReturnResolutionService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.shared.AbstractBusinessCapability",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.shared.AbstractBusinessCapability",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.shared.AbstractBusinessCapability",
+      "target_class": "com.dsarp.shop.shared.BusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.shared.BusinessCapability",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.shared.BusinessCapability",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.BusinessClockService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.BusinessClockService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.BusinessClockService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.ReferenceGenerationService",
+      "target_class": "com.dsarp.shop.model.CapabilityDecision"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.ReferenceGenerationService",
+      "target_class": "com.dsarp.shop.model.OrderContext"
+    },
+    {
+      "source_class": "com.dsarp.shop.utilities.ReferenceGenerationService",
+      "target_class": "com.dsarp.shop.shared.AbstractBusinessCapability"
+    }
+  ]
+}

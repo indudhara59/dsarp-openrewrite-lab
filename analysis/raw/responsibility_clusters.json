@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.0",
+  "responsibility_clusters": [
+    {
+      "cluster_id": "cluster:adapters:audit",
+      "component": "adapters",
+      "member_classes": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore"
+      ],
+      "dominant_name_tokens": [
+        "audit",
+        "memory",
+        "store"
+      ],
+      "dominant_subpackage": "audit",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 3,
+      "cohesion_score": 1.0,
+      "confidence": 1.0,
+      "evidence": [
+        "shared top-level subpackage=audit",
+        "internal connectivity edges=0",
+        "common class-name tokens=audit,memory,store",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=3"
+      ]
+    },
+    {
+      "cluster_id": "cluster:adapters:delivery",
+      "component": "adapters",
+      "member_classes": [
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway"
+      ],
+      "dominant_name_tokens": [
+        "delivery",
+        "gateway",
+        "memory"
+      ],
+      "dominant_subpackage": "delivery",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 3,
+      "cohesion_score": 1.0,
+      "confidence": 1.0,
+      "evidence": [
+        "shared top-level subpackage=delivery",
+        "internal connectivity edges=0",
+        "common class-name tokens=delivery,gateway,memory",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=3"
+      ]
+    },
+    {
+      "cluster_id": "cluster:adapters:notification",
+      "component": "adapters",
+      "member_classes": [
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter",
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter"
+      ],
+      "dominant_name_tokens": [
+        "notification",
+        "console",
+        "recording"
+      ],
+      "dominant_subpackage": "notification",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 6,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=notification",
+        "internal connectivity edges=0",
+        "common class-name tokens=notification,console,recording",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=6"
+      ]
+    },
+    {
+      "cluster_id": "cluster:adapters:payment",
+      "component": "adapters",
+      "member_classes": [
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway",
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway"
+      ],
+      "dominant_name_tokens": [
+        "gateway",
+        "deterministic",
+        "fraud",
+        "memory",
+        "payment"
+      ],
+      "dominant_subpackage": "payment",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 6,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=payment",
+        "internal connectivity edges=0",
+        "common class-name tokens=gateway,deterministic,fraud,memory,payment",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=6"
+      ]
+    },
+    {
+      "cluster_id": "cluster:adapters:repository",
+      "component": "adapters",
+      "member_classes": [
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository",
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository"
+      ],
+      "dominant_name_tokens": [
+        "memory",
+        "repository",
+        "catalog",
+        "customer",
+        "inventory"
+      ],
+      "dominant_subpackage": "repository",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=repository",
+        "internal connectivity edges=0",
+        "common class-name tokens=memory,repository,catalog,customer,inventory",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:application:root",
+      "component": "application",
+      "member_classes": [
+        "com.dsarp.shop.application.CartUseCase",
+        "com.dsarp.shop.application.CatalogUseCase",
+        "com.dsarp.shop.application.CustomerUseCase",
+        "com.dsarp.shop.application.OrderWorkflow",
+        "com.dsarp.shop.application.ReturnUseCase",
+        "com.dsarp.shop.application.ShopApplication"
+      ],
+      "dominant_name_tokens": [
+        "case",
+        "use",
+        "application",
+        "cart",
+        "catalog"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 5,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.166667,
+      "confidence": 0.863334,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=5",
+        "common class-name tokens=case,use,application,cart,catalog",
+        "common dependency profile similarity=0.733333",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:cart:root",
+      "component": "cart",
+      "member_classes": [
+        "com.dsarp.shop.cart.CartAbandonmentService",
+        "com.dsarp.shop.cart.CartCreationService",
+        "com.dsarp.shop.cart.CartLineService",
+        "com.dsarp.shop.cart.CartPricingService"
+      ],
+      "dominant_name_tokens": [
+        "cart",
+        "abandonment",
+        "creation",
+        "line",
+        "pricing"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=cart,abandonment,creation,line,pricing",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:catalog:root",
+      "component": "catalog",
+      "member_classes": [
+        "com.dsarp.shop.catalog.CatalogSearchService",
+        "com.dsarp.shop.catalog.CategoryNavigationService",
+        "com.dsarp.shop.catalog.ProductAvailabilityService",
+        "com.dsarp.shop.catalog.ProductPricingService"
+      ],
+      "dominant_name_tokens": [
+        "product",
+        "availability",
+        "catalog",
+        "category",
+        "navigation"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=product,availability,catalog,category,navigation",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:configuration:root",
+      "component": "configuration",
+      "member_classes": [
+        "com.dsarp.shop.configuration.FeatureConfigurationService",
+        "com.dsarp.shop.configuration.PolicyConfigurationService"
+      ],
+      "dominant_name_tokens": [
+        "configuration",
+        "feature"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 6,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=configuration,feature",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=6"
+      ]
+    },
+    {
+      "cluster_id": "cluster:customer:root",
+      "component": "customer",
+      "member_classes": [
+        "com.dsarp.shop.customer.CustomerConsentService",
+        "com.dsarp.shop.customer.CustomerProfileService",
+        "com.dsarp.shop.customer.CustomerRegistrationService",
+        "com.dsarp.shop.customer.CustomerTierService"
+      ],
+      "dominant_name_tokens": [
+        "customer",
+        "consent",
+        "profile",
+        "registration",
+        "tier"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=customer,consent,profile,registration,tier",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:delivery:root",
+      "component": "delivery",
+      "member_classes": [
+        "com.dsarp.shop.delivery.DeliveryExceptionService",
+        "com.dsarp.shop.delivery.DeliveryQuoteService",
+        "com.dsarp.shop.delivery.DeliverySchedulingService",
+        "com.dsarp.shop.delivery.DeliveryTrackingService"
+      ],
+      "dominant_name_tokens": [
+        "delivery",
+        "exception",
+        "quote",
+        "scheduling",
+        "tracking"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=delivery,exception,quote,scheduling,tracking",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:experimentalpromotions:adapters",
+      "component": "experimentalpromotions",
+      "member_classes": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter"
+      ],
+      "dominant_name_tokens": [
+        "promotion",
+        "campaign",
+        "catalog",
+        "configuration",
+        "customer"
+      ],
+      "dominant_subpackage": "adapters",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 24,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=adapters",
+        "internal connectivity edges=0",
+        "common class-name tokens=promotion,campaign,catalog,configuration,customer",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=24"
+      ]
+    },
+    {
+      "cluster_id": "cluster:experimentalpromotions:api",
+      "component": "experimentalpromotions",
+      "member_classes": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+      ],
+      "dominant_name_tokens": [
+        "discount"
+      ],
+      "dominant_subpackage": "api",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 1,
+      "cohesion_score": 1.0,
+      "confidence": 1.0,
+      "evidence": [
+        "shared top-level subpackage=api",
+        "internal connectivity edges=0",
+        "common class-name tokens=discount",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:experimentalpromotions:engine",
+      "component": "experimentalpromotions",
+      "member_classes": [
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter"
+      ],
+      "dominant_name_tokens": [
+        "promotion",
+        "engine",
+        "experiment",
+        "experimental",
+        "router"
+      ],
+      "dominant_subpackage": "engine",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=engine",
+        "internal connectivity edges=0",
+        "common class-name tokens=promotion,engine,experiment,experimental,router",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:experimentalpromotions:rules",
+      "component": "experimentalpromotions",
+      "member_classes": [
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "dominant_name_tokens": [
+        "discount",
+        "abandoned",
+        "boost",
+        "cart",
+        "category"
+      ],
+      "dominant_subpackage": "rules",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 30,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=rules",
+        "internal connectivity edges=0",
+        "common class-name tokens=discount,abandoned,boost,cart,category",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=30"
+      ]
+    },
+    {
+      "cluster_id": "cluster:fraud:root",
+      "component": "fraud",
+      "member_classes": [
+        "com.dsarp.shop.fraud.AccountTakeoverCheckService",
+        "com.dsarp.shop.fraud.AddressRiskService",
+        "com.dsarp.shop.fraud.FraudAssessmentService",
+        "com.dsarp.shop.fraud.VelocityCheckService"
+      ],
+      "dominant_name_tokens": [
+        "check",
+        "account",
+        "address",
+        "assessment",
+        "fraud"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=check,account,address,assessment,fraud",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:audit",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder"
+      ],
+      "dominant_name_tokens": [
+        "audit",
+        "recorder",
+        "assembler",
+        "collector",
+        "compliance"
+      ],
+      "dominant_subpackage": "audit",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=audit",
+        "internal connectivity edges=0",
+        "common class-name tokens=audit,recorder,assembler,collector,compliance",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:inventory",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector"
+      ],
+      "dominant_name_tokens": [
+        "inventory",
+        "reservation",
+        "allocation",
+        "availability",
+        "backorder"
+      ],
+      "dominant_subpackage": "inventory",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=inventory",
+        "internal connectivity edges=0",
+        "common class-name tokens=inventory,reservation,allocation,availability,backorder",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:notification",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier"
+      ],
+      "dominant_name_tokens": [
+        "notifier",
+        "notification",
+        "composer",
+        "confirmation",
+        "delivery"
+      ],
+      "dominant_subpackage": "notification",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=notification",
+        "internal connectivity edges=0",
+        "common class-name tokens=notifier,notification,composer,confirmation,delivery",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:payment",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService"
+      ],
+      "dominant_name_tokens": [
+        "payment",
+        "assessor",
+        "authorization",
+        "calculation",
+        "capture"
+      ],
+      "dominant_subpackage": "payment",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=payment",
+        "internal connectivity edges=0",
+        "common class-name tokens=payment,assessor,authorization,calculation,capture",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:promotion",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector"
+      ],
+      "dominant_name_tokens": [
+        "promotion",
+        "evaluator",
+        "calculator",
+        "cart",
+        "checker"
+      ],
+      "dominant_subpackage": "promotion",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=promotion",
+        "internal connectivity edges=0",
+        "common class-name tokens=promotion,evaluator,calculator,cart,checker",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:reporting",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator"
+      ],
+      "dominant_name_tokens": [
+        "reporter",
+        "performance",
+        "analyzer",
+        "calculator",
+        "cohort"
+      ],
+      "dominant_subpackage": "reporting",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=reporting",
+        "internal connectivity edges=0",
+        "common class-name tokens=reporter,performance,analyzer,calculator,cohort",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:megacomponent:validation",
+      "component": "megacomponent",
+      "member_classes": [
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator"
+      ],
+      "dominant_name_tokens": [
+        "validator",
+        "order",
+        "address",
+        "constraint",
+        "coordinator"
+      ],
+      "dominant_subpackage": "validation",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 21,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=validation",
+        "internal connectivity edges=0",
+        "common class-name tokens=validator,order,address,constraint,coordinator",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=21"
+      ]
+    },
+    {
+      "cluster_id": "cluster:model:root",
+      "component": "model",
+      "member_classes": [
+        "com.dsarp.shop.model.Address",
+        "com.dsarp.shop.model.AuditEvent",
+        "com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.model.CartId",
+        "com.dsarp.shop.model.CouponCode",
+        "com.dsarp.shop.model.CustomerId",
+        "com.dsarp.shop.model.CustomerProfile",
+        "com.dsarp.shop.model.DeliveryId",
+        "com.dsarp.shop.model.DeliveryWindow",
+        "com.dsarp.shop.model.EmailAddress",
+        "com.dsarp.shop.model.InventoryPosition",
+        "com.dsarp.shop.model.Money",
+        "com.dsarp.shop.model.NotificationMessage",
+        "com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.model.OrderId",
+        "com.dsarp.shop.model.OrderLine",
+        "com.dsarp.shop.model.PaymentAuthorization",
+        "com.dsarp.shop.model.PaymentId",
+        "com.dsarp.shop.model.ProductId",
+        "com.dsarp.shop.model.ProductSnapshot",
+        "com.dsarp.shop.model.PromotionAdjustment",
+        "com.dsarp.shop.model.ReturnId",
+        "com.dsarp.shop.model.ReturnRequest",
+        "com.dsarp.shop.model.SalesSnapshot"
+      ],
+      "dominant_name_tokens": [
+        "order",
+        "address",
+        "customer",
+        "delivery",
+        "payment"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 12,
+      "outgoing_edge_count": 0,
+      "cohesion_score": 0.021739,
+      "confidence": 0.678985,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=12",
+        "common class-name tokens=order,address,customer,delivery,payment",
+        "common dependency profile similarity=0.536232",
+        "outgoing edges=0"
+      ]
+    },
+    {
+      "cluster_id": "cluster:ordercore:root",
+      "component": "ordercore",
+      "member_classes": [
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator"
+      ],
+      "dominant_name_tokens": [
+        "order",
+        "calculator",
+        "cancellation",
+        "completion",
+        "decision"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 36,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=order,calculator,cancellation,completion,decision",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=36"
+      ]
+    },
+    {
+      "cluster_id": "cluster:returns:root",
+      "component": "returns",
+      "member_classes": [
+        "com.dsarp.shop.returns.ReturnAuthorizationService",
+        "com.dsarp.shop.returns.ReturnEligibilityService",
+        "com.dsarp.shop.returns.ReturnInspectionService",
+        "com.dsarp.shop.returns.ReturnResolutionService"
+      ],
+      "dominant_name_tokens": [
+        "return",
+        "authorization",
+        "eligibility",
+        "inspection",
+        "resolution"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 12,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=return,authorization,eligibility,inspection,resolution",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=12"
+      ]
+    },
+    {
+      "cluster_id": "cluster:shared:root",
+      "component": "shared",
+      "member_classes": [
+        "com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.shared.BusinessCapability"
+      ],
+      "dominant_name_tokens": [
+        "business",
+        "capability",
+        "abstract"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 1,
+      "outgoing_edge_count": 4,
+      "cohesion_score": 0.5,
+      "confidence": 0.9,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=1",
+        "common class-name tokens=business,capability,abstract",
+        "common dependency profile similarity=0.5",
+        "outgoing edges=4"
+      ]
+    },
+    {
+      "cluster_id": "cluster:utilities:root",
+      "component": "utilities",
+      "member_classes": [
+        "com.dsarp.shop.utilities.BusinessClockService",
+        "com.dsarp.shop.utilities.ReferenceGenerationService"
+      ],
+      "dominant_name_tokens": [
+        "business",
+        "clock",
+        "generation",
+        "reference"
+      ],
+      "dominant_subpackage": "root",
+      "internal_edge_count": 0,
+      "outgoing_edge_count": 6,
+      "cohesion_score": 0.0,
+      "confidence": 0.75,
+      "evidence": [
+        "shared top-level subpackage=root",
+        "internal connectivity edges=0",
+        "common class-name tokens=business,clock,generation,reference",
+        "common dependency profile similarity=1.0",
+        "outgoing edges=6"
+      ]
+    }
+  ]
+}

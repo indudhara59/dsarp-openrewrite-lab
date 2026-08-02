@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0",
+  "component_metrics": [
+    {
+      "component": "adapters",
+      "production_class_count": 10,
+      "production_loc": 400,
+      "package_count": 5,
+      "ca": 0,
+      "ce": 2,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "megacomponent",
+        "model"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 30,
+      "fan_in": 0,
+      "fan_out": 30,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 6.993007,
+      "percentage_total_production_loc": 3.332223,
+      "degree_centrality": 0.142857
+    },
+    {
+      "component": "application",
+      "production_class_count": 6,
+      "production_loc": 140,
+      "package_count": 1,
+      "ca": 0,
+      "ce": 4,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "experimentalpromotions",
+        "megacomponent",
+        "model",
+        "ordercore"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 21,
+      "fan_in": 0,
+      "fan_out": 21,
+      "internal_class_dependency_count": 5,
+      "internal_dependency_density": 0.166667,
+      "percentage_total_production_classes": 4.195804,
+      "percentage_total_production_loc": 1.166278,
+      "degree_centrality": 0.285714
+    },
+    {
+      "component": "cart",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 0,
+      "ce": 2,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 0,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.142857
+    },
+    {
+      "component": "catalog",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 1,
+      "ce": 2,
+      "instability": 0.666667,
+      "incoming_component_edges": [
+        "experimentalpromotions"
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 11,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 11,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.214286
+    },
+    {
+      "component": "configuration",
+      "production_class_count": 2,
+      "production_loc": 248,
+      "package_count": 1,
+      "ca": 1,
+      "ce": 2,
+      "instability": 0.666667,
+      "incoming_component_edges": [
+        "experimentalpromotions"
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 11,
+      "weighted_outgoing_dependency_count": 6,
+      "fan_in": 11,
+      "fan_out": 6,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 1.398601,
+      "percentage_total_production_loc": 2.065978,
+      "degree_centrality": 0.214286
+    },
+    {
+      "component": "customer",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 1,
+      "ce": 2,
+      "instability": 0.666667,
+      "incoming_component_edges": [
+        "experimentalpromotions"
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 11,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 11,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.214286
+    },
+    {
+      "component": "delivery",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 0,
+      "ce": 2,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 0,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.142857
+    },
+    {
+      "component": "experimentalpromotions",
+      "production_class_count": 12,
+      "production_loc": 527,
+      "package_count": 4,
+      "ca": 2,
+      "ce": 5,
+      "instability": 0.714286,
+      "incoming_component_edges": [
+        "application",
+        "ordercore"
+      ],
+      "outgoing_component_edges": [
+        "catalog",
+        "configuration",
+        "customer",
+        "model",
+        "utilities"
+      ],
+      "weighted_incoming_dependency_count": 14,
+      "weighted_outgoing_dependency_count": 56,
+      "fan_in": 14,
+      "fan_out": 56,
+      "internal_class_dependency_count": 11,
+      "internal_dependency_density": 0.083333,
+      "percentage_total_production_classes": 8.391608,
+      "percentage_total_production_loc": 4.390203,
+      "degree_centrality": 0.5
+    },
+    {
+      "component": "fraud",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 0,
+      "ce": 2,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 0,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.142857
+    },
+    {
+      "component": "megacomponent",
+      "production_class_count": 49,
+      "production_loc": 6076,
+      "package_count": 7,
+      "ca": 2,
+      "ce": 2,
+      "instability": 0.5,
+      "incoming_component_edges": [
+        "adapters",
+        "application"
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 16,
+      "weighted_outgoing_dependency_count": 147,
+      "fan_in": 16,
+      "fan_out": 147,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 34.265734,
+      "percentage_total_production_loc": 50.616461,
+      "degree_centrality": 0.285714
+    },
+    {
+      "component": "model",
+      "production_class_count": 24,
+      "production_loc": 282,
+      "package_count": 1,
+      "ca": 14,
+      "ce": 0,
+      "instability": 0.0,
+      "incoming_component_edges": [
+        "adapters",
+        "application",
+        "cart",
+        "catalog",
+        "configuration",
+        "customer",
+        "delivery",
+        "experimentalpromotions",
+        "fraud",
+        "megacomponent",
+        "ordercore",
+        "returns",
+        "shared",
+        "utilities"
+      ],
+      "outgoing_component_edges": [
+      ],
+      "weighted_incoming_dependency_count": 226,
+      "weighted_outgoing_dependency_count": 0,
+      "fan_in": 226,
+      "fan_out": 0,
+      "internal_class_dependency_count": 12,
+      "internal_dependency_density": 0.021739,
+      "percentage_total_production_classes": 16.783217,
+      "percentage_total_production_loc": 2.349217,
+      "degree_centrality": 1.0
+    },
+    {
+      "component": "ordercore",
+      "production_class_count": 12,
+      "production_loc": 1020,
+      "package_count": 1,
+      "ca": 1,
+      "ce": 2,
+      "instability": 0.666667,
+      "incoming_component_edges": [
+        "application"
+      ],
+      "outgoing_component_edges": [
+        "experimentalpromotions",
+        "model"
+      ],
+      "weighted_incoming_dependency_count": 1,
+      "weighted_outgoing_dependency_count": 36,
+      "fan_in": 1,
+      "fan_out": 36,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 8.391608,
+      "percentage_total_production_loc": 8.497168,
+      "degree_centrality": 0.214286
+    },
+    {
+      "component": "returns",
+      "production_class_count": 4,
+      "production_loc": 496,
+      "package_count": 1,
+      "ca": 0,
+      "ce": 2,
+      "instability": 1.0,
+      "incoming_component_edges": [
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 0,
+      "weighted_outgoing_dependency_count": 12,
+      "fan_in": 0,
+      "fan_out": 12,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 2.797203,
+      "percentage_total_production_loc": 4.131956,
+      "degree_centrality": 0.142857
+    },
+    {
+      "component": "shared",
+      "production_class_count": 2,
+      "production_loc": 87,
+      "package_count": 1,
+      "ca": 9,
+      "ce": 1,
+      "instability": 0.1,
+      "incoming_component_edges": [
+        "cart",
+        "catalog",
+        "configuration",
+        "customer",
+        "delivery",
+        "fraud",
+        "megacomponent",
+        "returns",
+        "utilities"
+      ],
+      "outgoing_component_edges": [
+        "model"
+      ],
+      "weighted_incoming_dependency_count": 77,
+      "weighted_outgoing_dependency_count": 4,
+      "fan_in": 77,
+      "fan_out": 4,
+      "internal_class_dependency_count": 1,
+      "internal_dependency_density": 0.5,
+      "percentage_total_production_classes": 1.398601,
+      "percentage_total_production_loc": 0.724758,
+      "degree_centrality": 0.714286
+    },
+    {
+      "component": "utilities",
+      "production_class_count": 2,
+      "production_loc": 248,
+      "package_count": 1,
+      "ca": 1,
+      "ce": 2,
+      "instability": 0.666667,
+      "incoming_component_edges": [
+        "experimentalpromotions"
+      ],
+      "outgoing_component_edges": [
+        "model",
+        "shared"
+      ],
+      "weighted_incoming_dependency_count": 11,
+      "weighted_outgoing_dependency_count": 6,
+      "fan_in": 11,
+      "fan_out": 6,
+      "internal_class_dependency_count": 0,
+      "internal_dependency_density": 0.0,
+      "percentage_total_production_classes": 1.398601,
+      "percentage_total_production_loc": 2.065978,
+      "degree_centrality": 0.214286
+    }
+  ]
+}
