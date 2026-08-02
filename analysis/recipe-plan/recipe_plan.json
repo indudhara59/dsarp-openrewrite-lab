@@ -1,0 +1,1098 @@
+{
+  "composite_recipe_name": "org.dsarp.architecture.RefactorBenchmarkArchitecture",
+  "global_postconditions": [
+    "All moved source paths match their new package declarations.",
+    "All imports, fully qualified references, declarations, and type attribution use the new packages.",
+    "No unrelated responsibility under the original component moved.",
+    "The benchmark build and tests pass and the semantic analyzer reports no unresolved symbols.",
+    "The resulting component graph has no newly introduced cycle."
+  ],
+  "global_preconditions": [
+    "The working tree matches source_commit and contains no unreviewed overlapping edits.",
+    "The benchmark clean build and all tests pass.",
+    "All seven source packages contain exactly the analyzed symbol sets.",
+    "A successful OpenRewrite dry run is reviewed before any rewrite:run invocation.",
+    "No operation crosses a Maven module boundary in this plan."
+  ],
+  "operations": [
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.reporting",
+        "com.dsarp.shop.reporting"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 30,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.reporting.CustomerCohortReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.CustomerCohortReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.CustomerCohortReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.InventoryTurnoverReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.InventoryTurnoverReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.InventoryTurnoverReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.PromotionPerformanceReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.PromotionPerformanceReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.PromotionPerformanceReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.RevenueSummaryCalculator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.RevenueSummaryCalculator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.RevenueSummaryCalculator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.reporting.SalesReportGenerator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.reporting.SalesReportGenerator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.reporting.SalesReportGenerator -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.CustomerCohortReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.DeliveryPerformanceReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.InventoryTurnoverReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.OrderVolumeAnalyzer -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.PromotionPerformanceReporter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.RevenueSummaryCalculator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.reporting.SalesReportGenerator -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/CustomerCohortReporter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/DeliveryPerformanceReporter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/InventoryTurnoverReporter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/OrderVolumeAnalyzer.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/PromotionPerformanceReporter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/RevenueSummaryCalculator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/reporting/SalesReportGenerator.java"
+      ],
+      "operation_id": "OP::e5f4488bb0575987",
+      "options": {
+        "newPackageName": "com.dsarp.shop.reporting",
+        "oldPackageName": "com.dsarp.shop.megacomponent.reporting",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.reporting.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.reporting."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.reporting.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::c0750f828761f1b8",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.reporting;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.promotion",
+        "com.dsarp.shop.promotion"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 31,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.promotion.PromotionEvaluator",
+        "com.dsarp.shop.promotion.CartThresholdEvaluator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.CartThresholdEvaluator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.CartThresholdEvaluator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.CouponEligibilityChecker -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.CouponEligibilityChecker -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.CouponEligibilityChecker -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.PromotionEvaluator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.PromotionEvaluator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.PromotionEvaluator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.PromotionStackingResolver -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.PromotionStackingResolver -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.PromotionStackingResolver -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.PromotionUsageRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.PromotionUsageRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.PromotionUsageRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.promotion.SeasonalOfferSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.promotion.SeasonalOfferSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.promotion.SeasonalOfferSelector -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.promotion.PromotionEvaluator",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.CartThresholdEvaluator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.CouponEligibilityChecker -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.LoyaltyDiscountCalculator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.PromotionEvaluator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.PromotionStackingResolver -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.PromotionUsageRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.promotion.SeasonalOfferSelector -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/CartThresholdEvaluator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/CouponEligibilityChecker.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/LoyaltyDiscountCalculator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionEvaluator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionStackingResolver.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/PromotionUsageRecorder.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/promotion/SeasonalOfferSelector.java"
+      ],
+      "operation_id": "OP::21ef7e62564af116",
+      "options": {
+        "newPackageName": "com.dsarp.shop.promotion",
+        "oldPackageName": "com.dsarp.shop.megacomponent.promotion",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.promotion.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.promotion."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.promotion.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::c9924540cef8e8d9",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.promotion;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.audit",
+        "com.dsarp.shop.audit"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 32,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore -> com.dsarp.shop.audit.AuditEventWriter",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.audit.AuditEventWriter",
+        "com.dsarp.shop.audit.AuditEventWriter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.AuditEventWriter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.AuditEventWriter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.AuditTrailQueryService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.AuditTrailQueryService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.AuditTrailQueryService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.ComplianceEvidenceCollector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.ComplianceEvidenceCollector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.ComplianceEvidenceCollector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.InventoryAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.InventoryAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.InventoryAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.OrderAuditAssembler -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.OrderAuditAssembler -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.OrderAuditAssembler -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.PaymentAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.PaymentAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.PaymentAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.audit.PromotionAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.audit.PromotionAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.audit.PromotionAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.adapters.audit.InMemoryAuditStore -> com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/audit/InMemoryAuditStore.java",
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditEventWriter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditTrailQueryService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/ComplianceEvidenceCollector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/InventoryAuditRecorder.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/OrderAuditAssembler.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PaymentAuditRecorder.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PromotionAuditRecorder.java"
+      ],
+      "operation_id": "OP::74f6005d410bbfdf",
+      "options": {
+        "newPackageName": "com.dsarp.shop.audit",
+        "oldPackageName": "com.dsarp.shop.megacomponent.audit",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.audit.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.audit."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.audit.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::7460ee4622a5a8ce",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.audit;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.inventory",
+        "com.dsarp.shop.inventory"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 33,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository -> com.dsarp.shop.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository -> com.dsarp.shop.inventory.InventoryReservationService",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.inventory.InventoryReservationService",
+        "com.dsarp.shop.inventory.BackorderDecisionService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.BackorderDecisionService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.BackorderDecisionService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.InventoryReleaseService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.InventoryReleaseService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.InventoryReleaseService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.InventoryReservationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.InventoryReservationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.InventoryReservationService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.ReservationExpiryService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.ReservationExpiryService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.ReservationExpiryService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.StockAllocationPlanner -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.StockAllocationPlanner -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.StockAllocationPlanner -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.inventory.WarehouseSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.inventory.WarehouseSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.inventory.WarehouseSelector -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.adapters.repository.InMemoryCatalogRepository -> com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.adapters.repository.InMemoryInventoryRepository -> com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryCatalogRepository.java",
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryInventoryRepository.java",
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/BackorderDecisionService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryAvailabilityChecker.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReleaseService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReservationService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/ReservationExpiryService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/StockAllocationPlanner.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/WarehouseSelector.java"
+      ],
+      "operation_id": "OP::a3580c2d7e10f349",
+      "options": {
+        "newPackageName": "com.dsarp.shop.inventory",
+        "oldPackageName": "com.dsarp.shop.megacomponent.inventory",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.inventory.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.inventory."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.inventory.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::1b2ed2a730bc0213",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.inventory;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.validation",
+        "com.dsarp.shop.validation"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 34,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository -> com.dsarp.shop.validation.CustomerStatusValidator",
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository -> com.dsarp.shop.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.validation.AddressValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.AddressValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.AddressValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.CustomerStatusValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.CustomerStatusValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.CustomerStatusValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.DeliveryConstraintValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.DeliveryConstraintValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.DeliveryConstraintValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.FraudSignalValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.FraudSignalValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.FraudSignalValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.OrderLineValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.OrderLineValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.OrderLineValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.OrderValidationCoordinator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.OrderValidationCoordinator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.OrderValidationCoordinator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.validation.PaymentDataValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.validation.PaymentDataValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.validation.PaymentDataValidator -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.adapters.repository.InMemoryCustomerRepository -> com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.adapters.repository.InMemoryOrderRepository -> com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.AddressValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryCustomerRepository.java",
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/repository/InMemoryOrderRepository.java",
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/AddressValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/CustomerStatusValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/DeliveryConstraintValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/FraudSignalValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderLineValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderValidationCoordinator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/PaymentDataValidator.java"
+      ],
+      "operation_id": "OP::1c15037279cc9a59",
+      "options": {
+        "newPackageName": "com.dsarp.shop.validation",
+        "oldPackageName": "com.dsarp.shop.megacomponent.validation",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.validation.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.validation."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.validation.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::6e8aa33dd0e98f53",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.validation;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.payment",
+        "com.dsarp.shop.payment"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 35,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway -> com.dsarp.shop.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway -> com.dsarp.shop.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.payment.PaymentAuthorizationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentAuthorizationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentAuthorizationService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.PaymentCaptureService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentCaptureService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentCaptureService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.PaymentCoordinator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentCoordinator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentCoordinator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.PaymentMethodSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentMethodSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentMethodSelector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.PaymentRetryPlanner -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentRetryPlanner -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentRetryPlanner -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.PaymentRiskAssessor -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.PaymentRiskAssessor -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.PaymentRiskAssessor -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.payment.RefundCalculationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.payment.RefundCalculationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.payment.RefundCalculationService -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.adapters.payment.DeterministicFraudGateway -> com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.adapters.payment.InMemoryPaymentGateway -> com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/payment/DeterministicFraudGateway.java",
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/payment/InMemoryPaymentGateway.java",
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentAuthorizationService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCaptureService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCoordinator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentMethodSelector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRetryPlanner.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRiskAssessor.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/RefundCalculationService.java"
+      ],
+      "operation_id": "OP::33520fe2e8208b9c",
+      "options": {
+        "newPackageName": "com.dsarp.shop.payment",
+        "oldPackageName": "com.dsarp.shop.megacomponent.payment",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.payment.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.payment."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.payment.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::d065451d7c12a381",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.payment;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.notification",
+        "com.dsarp.shop.notification"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier"
+      ],
+      "automation_class": "DECLARATIVE_BUILT_IN",
+      "execution_order": 36,
+      "expected_dependency_edges_added": [
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway -> com.dsarp.shop.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter -> com.dsarp.shop.notification.NotificationComposer",
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter -> com.dsarp.shop.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.notification.DeliveryUpdateNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.DeliveryUpdateNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.DeliveryUpdateNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.MessageTemplateSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.MessageTemplateSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.MessageTemplateSelector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.NotificationComposer -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.NotificationComposer -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.NotificationComposer -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.NotificationPreferenceResolver -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.NotificationPreferenceResolver -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.NotificationPreferenceResolver -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.OrderConfirmationNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.OrderConfirmationNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.OrderConfirmationNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.PaymentFailureNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.PaymentFailureNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.PaymentFailureNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.notification.ReturnStatusNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.notification.ReturnStatusNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.notification.ReturnStatusNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_dependency_edges_removed": [
+        "com.dsarp.shop.adapters.delivery.InMemoryDeliveryGateway -> com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.adapters.notification.ConsoleNotificationAdapter -> com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.adapters.notification.RecordingNotificationAdapter -> com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.application.OrderWorkflow -> com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier -> com.dsarp.shop.model.CapabilityDecision",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier -> com.dsarp.shop.model.OrderContext",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier -> com.dsarp.shop.shared.AbstractBusinessCapability"
+      ],
+      "expected_files": [
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/delivery/InMemoryDeliveryGateway.java",
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/notification/ConsoleNotificationAdapter.java",
+        "shop-adapters/src/main/java/com/dsarp/shop/adapters/notification/RecordingNotificationAdapter.java",
+        "shop-application/src/main/java/com/dsarp/shop/application/OrderWorkflow.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/DeliveryUpdateNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/MessageTemplateSelector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationComposer.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationPreferenceResolver.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/OrderConfirmationNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/PaymentFailureNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/ReturnStatusNotifier.java"
+      ],
+      "operation_id": "OP::e25c0ecb47d797ce",
+      "options": {
+        "newPackageName": "com.dsarp.shop.notification",
+        "oldPackageName": "com.dsarp.shop.megacomponent.notification",
+        "recursive": false
+      },
+      "postconditions": [
+        "All 7 declarations and source paths reside under com.dsarp.shop.notification.",
+        "All resolved callers reference the new fully qualified type names.",
+        "No production declaration remains directly in com.dsarp.shop.megacomponent.notification."
+      ],
+      "preconditions": [
+        "Exactly 7 analyzed production types are declared directly in com.dsarp.shop.megacomponent.notification.",
+        "Every affected type remains in its current Maven module.",
+        "The simulated package move introduces no component cycle.",
+        "No unrelated subpackage is selected because recursive is false."
+      ],
+      "recipe_name": "org.openrewrite.java.ChangePackage",
+      "recommendation_id": "REC::aa203f303dd39ffa",
+      "risk": "MEDIUM",
+      "rollback_description": "Revert this operation's dry-run diff or apply the inverse ChangePackage mapping before any subsequent operation.",
+      "validation_commands": [
+        "benchmark/mvnw -f benchmark/pom.xml clean verify",
+        "rg -n '^package com\\.dsarp\\.shop\\.notification;' benchmark/shop-business/src/main/java"
+      ],
+      "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.audit",
+        "com.dsarp.shop.audit"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.audit.AuditEventWriter",
+        "com.dsarp.shop.megacomponent.audit.AuditTrailQueryService",
+        "com.dsarp.shop.megacomponent.audit.ComplianceEvidenceCollector",
+        "com.dsarp.shop.megacomponent.audit.InventoryAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.OrderAuditAssembler",
+        "com.dsarp.shop.megacomponent.audit.PaymentAuditRecorder",
+        "com.dsarp.shop.megacomponent.audit.PromotionAuditRecorder"
+      ],
+      "automation_class": "REJECTED_UNSAFE",
+      "execution_order": 37,
+      "expected_dependency_edges_added": [],
+      "expected_dependency_edges_removed": [],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditEventWriter.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/AuditTrailQueryService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/ComplianceEvidenceCollector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/InventoryAuditRecorder.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/OrderAuditAssembler.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PaymentAuditRecorder.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/audit/PromotionAuditRecorder.java"
+      ],
+      "operation_id": "OP::e80f2952b9ee81da",
+      "options": {},
+      "postconditions": [
+        "Not scheduled; no source change is permitted from this operation."
+      ],
+      "preconditions": [
+        "An explicit facade API and delegation contract must be selected.",
+        "The conflicting direct move must be removed from the composite plan."
+      ],
+      "recipe_name": null,
+      "recommendation_id": "REC::b85da629cd93b795",
+      "risk": "HIGH",
+      "rollback_description": "No rollback needed because the operation is rejected and must not execute.",
+      "validation_commands": [
+        "Confirm this operation_id is absent from the executable recipe list."
+      ],
+      "verified_recipe_source": null
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.inventory",
+        "com.dsarp.shop.inventory"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.inventory.BackorderDecisionService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryAvailabilityChecker",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReleaseService",
+        "com.dsarp.shop.megacomponent.inventory.InventoryReservationService",
+        "com.dsarp.shop.megacomponent.inventory.ReservationExpiryService",
+        "com.dsarp.shop.megacomponent.inventory.StockAllocationPlanner",
+        "com.dsarp.shop.megacomponent.inventory.WarehouseSelector"
+      ],
+      "automation_class": "REJECTED_UNSAFE",
+      "execution_order": 38,
+      "expected_dependency_edges_added": [],
+      "expected_dependency_edges_removed": [],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/BackorderDecisionService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryAvailabilityChecker.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReleaseService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/InventoryReservationService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/ReservationExpiryService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/StockAllocationPlanner.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/inventory/WarehouseSelector.java"
+      ],
+      "operation_id": "OP::deee60495b59c81c",
+      "options": {},
+      "postconditions": [
+        "Not scheduled; no source change is permitted from this operation."
+      ],
+      "preconditions": [
+        "An explicit facade API and delegation contract must be selected.",
+        "The conflicting direct move must be removed from the composite plan."
+      ],
+      "recipe_name": null,
+      "recommendation_id": "REC::77fffd4123157d96",
+      "risk": "HIGH",
+      "rollback_description": "No rollback needed because the operation is rejected and must not execute.",
+      "validation_commands": [
+        "Confirm this operation_id is absent from the executable recipe list."
+      ],
+      "verified_recipe_source": null
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.payment",
+        "com.dsarp.shop.payment"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.payment.PaymentAuthorizationService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCaptureService",
+        "com.dsarp.shop.megacomponent.payment.PaymentCoordinator",
+        "com.dsarp.shop.megacomponent.payment.PaymentMethodSelector",
+        "com.dsarp.shop.megacomponent.payment.PaymentRetryPlanner",
+        "com.dsarp.shop.megacomponent.payment.PaymentRiskAssessor",
+        "com.dsarp.shop.megacomponent.payment.RefundCalculationService"
+      ],
+      "automation_class": "REJECTED_UNSAFE",
+      "execution_order": 39,
+      "expected_dependency_edges_added": [],
+      "expected_dependency_edges_removed": [],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentAuthorizationService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCaptureService.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentCoordinator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentMethodSelector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRetryPlanner.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/PaymentRiskAssessor.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/payment/RefundCalculationService.java"
+      ],
+      "operation_id": "OP::5c0580356e55bb06",
+      "options": {},
+      "postconditions": [
+        "Not scheduled; no source change is permitted from this operation."
+      ],
+      "preconditions": [
+        "An explicit facade API and delegation contract must be selected.",
+        "The conflicting direct move must be removed from the composite plan."
+      ],
+      "recipe_name": null,
+      "recommendation_id": "REC::cbc8265e8dc3acc0",
+      "risk": "HIGH",
+      "rollback_description": "No rollback needed because the operation is rejected and must not execute.",
+      "validation_commands": [
+        "Confirm this operation_id is absent from the executable recipe list."
+      ],
+      "verified_recipe_source": null
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.validation",
+        "com.dsarp.shop.validation"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.validation.AddressValidator",
+        "com.dsarp.shop.megacomponent.validation.CustomerStatusValidator",
+        "com.dsarp.shop.megacomponent.validation.DeliveryConstraintValidator",
+        "com.dsarp.shop.megacomponent.validation.FraudSignalValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderLineValidator",
+        "com.dsarp.shop.megacomponent.validation.OrderValidationCoordinator",
+        "com.dsarp.shop.megacomponent.validation.PaymentDataValidator"
+      ],
+      "automation_class": "REJECTED_UNSAFE",
+      "execution_order": 40,
+      "expected_dependency_edges_added": [],
+      "expected_dependency_edges_removed": [],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/AddressValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/CustomerStatusValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/DeliveryConstraintValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/FraudSignalValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderLineValidator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/OrderValidationCoordinator.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/validation/PaymentDataValidator.java"
+      ],
+      "operation_id": "OP::5154d9cb685c23a6",
+      "options": {},
+      "postconditions": [
+        "Not scheduled; no source change is permitted from this operation."
+      ],
+      "preconditions": [
+        "An explicit facade API and delegation contract must be selected.",
+        "The conflicting direct move must be removed from the composite plan."
+      ],
+      "recipe_name": null,
+      "recommendation_id": "REC::e48585444f55d1c1",
+      "risk": "HIGH",
+      "rollback_description": "No rollback needed because the operation is rejected and must not execute.",
+      "validation_commands": [
+        "Confirm this operation_id is absent from the executable recipe list."
+      ],
+      "verified_recipe_source": null
+    },
+    {
+      "affected_packages": [
+        "com.dsarp.shop.megacomponent.notification",
+        "com.dsarp.shop.notification"
+      ],
+      "affected_symbols": [
+        "com.dsarp.shop.megacomponent.notification.DeliveryUpdateNotifier",
+        "com.dsarp.shop.megacomponent.notification.MessageTemplateSelector",
+        "com.dsarp.shop.megacomponent.notification.NotificationComposer",
+        "com.dsarp.shop.megacomponent.notification.NotificationPreferenceResolver",
+        "com.dsarp.shop.megacomponent.notification.OrderConfirmationNotifier",
+        "com.dsarp.shop.megacomponent.notification.PaymentFailureNotifier",
+        "com.dsarp.shop.megacomponent.notification.ReturnStatusNotifier"
+      ],
+      "automation_class": "REJECTED_UNSAFE",
+      "execution_order": 41,
+      "expected_dependency_edges_added": [],
+      "expected_dependency_edges_removed": [],
+      "expected_files": [
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/DeliveryUpdateNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/MessageTemplateSelector.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationComposer.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/NotificationPreferenceResolver.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/OrderConfirmationNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/PaymentFailureNotifier.java",
+        "shop-business/src/main/java/com/dsarp/shop/megacomponent/notification/ReturnStatusNotifier.java"
+      ],
+      "operation_id": "OP::70c7378d610c49d5",
+      "options": {},
+      "postconditions": [
+        "Not scheduled; no source change is permitted from this operation."
+      ],
+      "preconditions": [
+        "An explicit facade API and delegation contract must be selected.",
+        "The conflicting direct move must be removed from the composite plan."
+      ],
+      "recipe_name": null,
+      "recommendation_id": "REC::c045b5a4696a8cdb",
+      "risk": "HIGH",
+      "rollback_description": "No rollback needed because the operation is rejected and must not execute.",
+      "validation_commands": [
+        "Confirm this operation_id is absent from the executable recipe list."
+      ],
+      "verified_recipe_source": null
+    }
+  ],
+  "plan_version": "1.0.0",
+  "source_analysis": [
+    {
+      "path": "analysis/recommendations/recommendations.json",
+      "sha256": "23a7e91c997a9621d62a60d403eae980df6f6c7788351d323ce59a7506592480"
+    },
+    {
+      "path": "analysis/ground-truth-evaluation/recommendation_evaluation.json",
+      "sha256": "b53837b5b68727df694e89c07cc79fbb57ec443e15202026e695bddc35759548"
+    },
+    {
+      "path": "analysis/raw/classes.json",
+      "sha256": "7fdcb330398800cb9cbdb1a3c250b5a21de9cf37bd2f885595f3661b3e72f61c"
+    },
+    {
+      "path": "analysis/raw/class_dependencies.json",
+      "sha256": "12e8658a768d2dd17e73c5d8a50d4321d92d200f1b86f0f232806a5a88b75d1d"
+    }
+  ],
+  "source_commit": "feb944e3181b72e48eb61dbda04c4eb8ae46407b",
+  "unsupported_operations": [
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::e80f2952b9ee81da",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::b85da629cd93b795",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::deee60495b59c81c",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::77fffd4123157d96",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::5c0580356e55bb06",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::cbc8265e8dc3acc0",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::5154d9cb685c23a6",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::e48585444f55d1c1",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::70c7378d610c49d5",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::c045b5a4696a8cdb",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "affected_symbols": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+      ],
+      "application_wiring_sources": [
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "automation_class": "MANUAL_REFACTORING",
+      "experimental_implementation_sources": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "investigated_mechanical_mapping": {
+        "note": "The built-in mapping is mechanically applicable, but scheduling it would bypass the validated recommendation pipeline.",
+        "options": {
+          "newPackageName": "com.dsarp.shop.contracts.promotion",
+          "oldPackageName": "com.dsarp.shop.experimentalpromotions.api",
+          "recursive": false
+        },
+        "recipe_name": "org.openrewrite.java.ChangePackage",
+        "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+      },
+      "maven_module_assessment": "All affected types are currently in shop-business; no Maven dependency change is required for a package-only relocation.",
+      "operation_id": "UNSUPPORTED::UD-001",
+      "ordercore_reference_sources": [
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator"
+      ],
+      "reason": "Blind detection missed the unstable dependency, so no validated accepted recommendation authorizes this transformation.",
+      "recommendation_id": null,
+      "required_dependency_outcome": [
+        "ordercore -> contracts.promotion",
+        "experimentalpromotions -> contracts.promotion",
+        "remove ordercore -> experimentalpromotions",
+        "exactly one DiscountPolicy declaration"
+      ],
+      "status": "NOT_SCHEDULED"
+    }
+  ],
+  "validation_commands": [
+    "benchmark/mvnw -f benchmark/pom.xml clean verify",
+    "benchmark/mvnw -f benchmark/pom.xml rewrite:dryRun -Drewrite.activeRecipes=org.dsarp.architecture.RefactorBenchmarkArchitecture",
+    "java -jar architecture-analyzer/target/architecture-analyzer-1.0.0.jar analyze --project benchmark --output analysis/dry-run --strict",
+    "python3 scripts/count_benchmark_size.py"
+  ]
+}

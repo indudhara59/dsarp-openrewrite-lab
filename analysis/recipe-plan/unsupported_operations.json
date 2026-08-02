@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "unsupported_operations": [
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::e80f2952b9ee81da",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::b85da629cd93b795",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::deee60495b59c81c",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::77fffd4123157d96",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::5c0580356e55bb06",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::cbc8265e8dc3acc0",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::5154d9cb685c23a6",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::e48585444f55d1c1",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "automation_class": "REJECTED_UNSAFE",
+      "operation_id": "OP::70c7378d610c49d5",
+      "reason": "Conflicts with the higher-ranked direct move for the same responsibility group; facade API/delegation shape is not specified.",
+      "recommendation_id": "REC::c045b5a4696a8cdb",
+      "required_resolution": "Choose either direct migration or define and validate an explicit facade contract before recipe authoring."
+    },
+    {
+      "affected_symbols": [
+        "com.dsarp.shop.experimentalpromotions.api.DiscountPolicy"
+      ],
+      "application_wiring_sources": [
+        "com.dsarp.shop.application.OrderWorkflow"
+      ],
+      "automation_class": "MANUAL_REFACTORING",
+      "experimental_implementation_sources": [
+        "com.dsarp.shop.experimentalpromotions.adapters.CatalogPromotionAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.CustomerSegmentAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.PromotionConfigurationAdapter",
+        "com.dsarp.shop.experimentalpromotions.adapters.RemoteCampaignSnapshotAdapter",
+        "com.dsarp.shop.experimentalpromotions.engine.ExperimentalPromotionEngine",
+        "com.dsarp.shop.experimentalpromotions.engine.PromotionExperimentRouter",
+        "com.dsarp.shop.experimentalpromotions.rules.AbandonedCartRecoveryPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.CategoryBoostPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.FlashSaleDiscountPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.LoyaltyMultiplierPolicy",
+        "com.dsarp.shop.experimentalpromotions.rules.NewCustomerDiscountPolicy"
+      ],
+      "investigated_mechanical_mapping": {
+        "note": "The built-in mapping is mechanically applicable, but scheduling it would bypass the validated recommendation pipeline.",
+        "options": {
+          "newPackageName": "com.dsarp.shop.contracts.promotion",
+          "oldPackageName": "com.dsarp.shop.experimentalpromotions.api",
+          "recursive": false
+        },
+        "recipe_name": "org.openrewrite.java.ChangePackage",
+        "verified_recipe_source": "https://docs.openrewrite.org/recipes/java/changepackage"
+      },
+      "maven_module_assessment": "All affected types are currently in shop-business; no Maven dependency change is required for a package-only relocation.",
+      "operation_id": "UNSUPPORTED::UD-001",
+      "ordercore_reference_sources": [
+        "com.dsarp.shop.ordercore.OrderCancellationService",
+        "com.dsarp.shop.ordercore.OrderCompletionService",
+        "com.dsarp.shop.ordercore.OrderDecisionService",
+        "com.dsarp.shop.ordercore.OrderFactory",
+        "com.dsarp.shop.ordercore.OrderHistoryService",
+        "com.dsarp.shop.ordercore.OrderIdentityService",
+        "com.dsarp.shop.ordercore.OrderLifecycleService",
+        "com.dsarp.shop.ordercore.OrderLinePolicy",
+        "com.dsarp.shop.ordercore.OrderPricingService",
+        "com.dsarp.shop.ordercore.OrderStateMachine",
+        "com.dsarp.shop.ordercore.OrderSubmissionService",
+        "com.dsarp.shop.ordercore.OrderTotalCalculator"
+      ],
+      "reason": "Blind detection missed the unstable dependency, so no validated accepted recommendation authorizes this transformation.",
+      "recommendation_id": null,
+      "required_dependency_outcome": [
+        "ordercore -> contracts.promotion",
+        "experimentalpromotions -> contracts.promotion",
+        "remove ordercore -> experimentalpromotions",
+        "exactly one DiscountPolicy declaration"
+      ],
+      "status": "NOT_SCHEDULED"
+    }
+  ]
+}
